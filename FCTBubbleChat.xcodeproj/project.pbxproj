@@ -20,6 +20,7 @@
 		9F261664196292BB007FF741 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F261662196292BB007FF741 /* InfoPlist.strings */; };
 		9F261666196292BB007FF741 /* FCTBubbleChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F261665196292BB007FF741 /* FCTBubbleChatTests.m */; };
 		9F26167119629C2C007FF741 /* FCTBubbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F26167019629C2C007FF741 /* FCTBubbleData.m */; };
+		9F2616781962B2D9007FF741 /* FCTBubbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		9F261665196292BB007FF741 /* FCTBubbleChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleChatTests.m; sourceTree = "<group>"; };
 		9F26166F19629C2C007FF741 /* FCTBubbleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTBubbleData.h; sourceTree = "<group>"; };
 		9F26167019629C2C007FF741 /* FCTBubbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleData.m; sourceTree = "<group>"; };
+		9F2616761962B2D9007FF741 /* FCTBubbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableViewCell.h; sourceTree = "<group>"; };
+		9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,12 +113,10 @@
 		9F261646196292BB007FF741 /* FCTBubbleChat */ = {
 			isa = PBXGroup;
 			children = (
-				9F26164F196292BB007FF741 /* FCTAppDelegate.h */,
-				9F261650196292BB007FF741 /* FCTAppDelegate.m */,
+				9F2616731962B290007FF741 /* CustomBubble */,
+				9F2616721962B27F007FF741 /* AppDelegate */,
 				9F261652196292BB007FF741 /* Images.xcassets */,
 				9F261647196292BB007FF741 /* Supporting Files */,
-				9F26166F19629C2C007FF741 /* FCTBubbleData.h */,
-				9F26167019629C2C007FF741 /* FCTBubbleData.m */,
 			);
 			path = FCTBubbleChat;
 			sourceTree = "<group>";
@@ -147,6 +148,26 @@
 				9F261662196292BB007FF741 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F2616721962B27F007FF741 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F26164F196292BB007FF741 /* FCTAppDelegate.h */,
+				9F261650196292BB007FF741 /* FCTAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		9F2616731962B290007FF741 /* CustomBubble */ = {
+			isa = PBXGroup;
+			children = (
+				9F2616761962B2D9007FF741 /* FCTBubbleTableViewCell.h */,
+				9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */,
+				9F26166F19629C2C007FF741 /* FCTBubbleData.h */,
+				9F26167019629C2C007FF741 /* FCTBubbleData.m */,
+			);
+			name = CustomBubble;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +269,7 @@
 				9F26167119629C2C007FF741 /* FCTBubbleData.m in Sources */,
 				9F261651196292BB007FF741 /* FCTAppDelegate.m in Sources */,
 				9F26164D196292BB007FF741 /* main.m in Sources */,
+				9F2616781962B2D9007FF741 /* FCTBubbleTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
