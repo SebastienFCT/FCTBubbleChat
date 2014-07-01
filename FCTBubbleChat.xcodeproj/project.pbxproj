@@ -19,6 +19,7 @@
 		9F26165C196292BB007FF741 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F261644196292BB007FF741 /* UIKit.framework */; };
 		9F261664196292BB007FF741 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F261662196292BB007FF741 /* InfoPlist.strings */; };
 		9F261666196292BB007FF741 /* FCTBubbleChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F261665196292BB007FF741 /* FCTBubbleChatTests.m */; };
+		9F26167119629C2C007FF741 /* FCTBubbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F26167019629C2C007FF741 /* FCTBubbleData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		9F261661196292BB007FF741 /* FCTBubbleChatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FCTBubbleChatTests-Info.plist"; sourceTree = "<group>"; };
 		9F261663196292BB007FF741 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9F261665196292BB007FF741 /* FCTBubbleChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleChatTests.m; sourceTree = "<group>"; };
+		9F26166F19629C2C007FF741 /* FCTBubbleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTBubbleData.h; sourceTree = "<group>"; };
+		9F26167019629C2C007FF741 /* FCTBubbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				9F261650196292BB007FF741 /* FCTAppDelegate.m */,
 				9F261652196292BB007FF741 /* Images.xcassets */,
 				9F261647196292BB007FF741 /* Supporting Files */,
+				9F26166F19629C2C007FF741 /* FCTBubbleData.h */,
+				9F26167019629C2C007FF741 /* FCTBubbleData.m */,
 			);
 			path = FCTBubbleChat;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F26167119629C2C007FF741 /* FCTBubbleData.m in Sources */,
 				9F261651196292BB007FF741 /* FCTAppDelegate.m in Sources */,
 				9F26164D196292BB007FF741 /* main.m in Sources */,
 			);
