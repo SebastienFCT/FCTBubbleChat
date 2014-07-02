@@ -21,6 +21,8 @@
 		9F261666196292BB007FF741 /* FCTBubbleChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F261665196292BB007FF741 /* FCTBubbleChatTests.m */; };
 		9F26167119629C2C007FF741 /* FCTBubbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F26167019629C2C007FF741 /* FCTBubbleData.m */; };
 		9F2616781962B2D9007FF741 /* FCTBubbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */; };
+		9F80F11E1963A2F400FF6132 /* FCTBubbleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */; };
+		9F80F1221963A56000FF6132 /* SimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80F1211963A56000FF6132 /* SimpleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		9F26167019629C2C007FF741 /* FCTBubbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleData.m; sourceTree = "<group>"; };
 		9F2616761962B2D9007FF741 /* FCTBubbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableViewCell.h; sourceTree = "<group>"; };
 		9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleTableViewCell.m; sourceTree = "<group>"; };
+		9F80F11C1963A2F400FF6132 /* FCTBubbleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableView.h; sourceTree = "<group>"; };
+		9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleTableView.m; sourceTree = "<group>"; };
+		9F80F1201963A56000FF6132 /* SimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleViewController.h; sourceTree = "<group>"; };
+		9F80F1211963A56000FF6132 /* SimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		9F261646196292BB007FF741 /* FCTBubbleChat */ = {
 			isa = PBXGroup;
 			children = (
+				9F80F11F1963A53F00FF6132 /* Test */,
 				9F2616731962B290007FF741 /* CustomBubble */,
 				9F2616721962B27F007FF741 /* AppDelegate */,
 				9F261652196292BB007FF741 /* Images.xcassets */,
@@ -166,8 +173,19 @@
 				9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */,
 				9F26166F19629C2C007FF741 /* FCTBubbleData.h */,
 				9F26167019629C2C007FF741 /* FCTBubbleData.m */,
+				9F80F11C1963A2F400FF6132 /* FCTBubbleTableView.h */,
+				9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */,
 			);
 			name = CustomBubble;
+			sourceTree = "<group>";
+		};
+		9F80F11F1963A53F00FF6132 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				9F80F1201963A56000FF6132 /* SimpleViewController.h */,
+				9F80F1211963A56000FF6132 /* SimpleViewController.m */,
+			);
+			name = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +286,9 @@
 			files = (
 				9F26167119629C2C007FF741 /* FCTBubbleData.m in Sources */,
 				9F261651196292BB007FF741 /* FCTAppDelegate.m in Sources */,
+				9F80F11E1963A2F400FF6132 /* FCTBubbleTableView.m in Sources */,
 				9F26164D196292BB007FF741 /* main.m in Sources */,
+				9F80F1221963A56000FF6132 /* SimpleViewController.m in Sources */,
 				9F2616781962B2D9007FF741 /* FCTBubbleTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +486,7 @@
 				9F26166B196292BB007FF741 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F26166C196292BB007FF741 /* Build configuration list for PBXNativeTarget "FCTBubbleChatTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +495,7 @@
 				9F26166E196292BB007FF741 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

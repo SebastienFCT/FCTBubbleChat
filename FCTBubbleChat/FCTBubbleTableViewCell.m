@@ -8,29 +8,26 @@
 
 #import "FCTBubbleTableViewCell.h"
 
+@interface FCTBubbleTableViewCell ()
+
+@property (retain) UIView *customView;
+
+- (void)makeTheCell;
+
+@end
+
 @implementation FCTBubbleTableViewCell
 
 @synthesize data = _data;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)makeTheCell
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)awakeFromNib
-{
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [self.customView removeFromSuperview];
+    UILabel *test = [[UILabel alloc] initWithFrame:CGRectMake(40, 5, 100, 50)];
+    test.text = @"blablablablabla";
+    self.customView = test;
+    
+    [self.contentView addSubview:self.customView];
 }
 
 @end

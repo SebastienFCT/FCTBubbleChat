@@ -8,13 +8,16 @@
 
 #import "FCTAppDelegate.h"
 
+#import "SimpleViewController.h"
+
 @implementation FCTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+    SimpleViewController *svc = [[SimpleViewController alloc] init];
+    self.window.rootViewController = svc;
     [self.window makeKeyAndVisible];
     return YES;
 }
