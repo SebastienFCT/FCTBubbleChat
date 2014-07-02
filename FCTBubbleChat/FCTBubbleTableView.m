@@ -18,6 +18,14 @@
 
 @synthesize nbBubble = _nbBubble;
 
+#pragma mark - init
+
+- (void)initFCTBubbleTableView
+{
+    self.delegate = self;
+    self.dataSource = self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -27,13 +35,32 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+#pragma mark - UITableViewDataSource implementation
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Drawing code
+    return 2;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;
+}
+
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FCTBubbleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FCTBubbleCell"];
+
+    if (cell == nil) {
+        cell = [[FCTBubbleTableViewCell alloc] init];
+    }
+        
+    return cell;
+}
 
 @end

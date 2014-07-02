@@ -10,6 +10,6 @@
 
 #import "FCTBubbleTableViewCell.h"
 
-@interface FCTBubbleTableView : UITableView
+@interface FCTBubbleTableView : UITableView<UITableViewDelegate, UITableViewDataSource>
 
 @end
