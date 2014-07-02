@@ -20,6 +20,12 @@
 
 @synthesize data = _data;
 
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+	[self makeTheCell];
+}
+
 - (void)makeTheCell
 {
     [self.customView removeFromSuperview];
