@@ -60,6 +60,7 @@
 		9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleTableView.m; sourceTree = "<group>"; };
 		9F80F1201963A56000FF6132 /* SimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleViewController.h; sourceTree = "<group>"; };
 		9F80F1211963A56000FF6132 /* SimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleViewController.m; sourceTree = "<group>"; };
+		9F80F1231963BAF400FF6132 /* FCTBubbleTableViewDatasource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableViewDatasource.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +176,7 @@
 				9F26167019629C2C007FF741 /* FCTBubbleData.m */,
 				9F80F11C1963A2F400FF6132 /* FCTBubbleTableView.h */,
 				9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */,
+				9F80F1231963BAF400FF6132 /* FCTBubbleTableViewDatasource.h */,
 			);
 			name = CustomBubble;
 			sourceTree = "<group>";
