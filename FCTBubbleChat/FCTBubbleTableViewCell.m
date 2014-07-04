@@ -20,6 +20,14 @@
 
 @synthesize data = _data;
 
+- (id)initWithCustomView:(UILabel *)view
+{
+    if (self = [super init]) {
+        [self makeCustomCell:view];
+    }
+    return self;
+}
+
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
@@ -48,6 +56,32 @@
     [label.layer setBorderWidth:1.0];
     [label.layer setBorderColor:[UIColor lightGrayColor].CGColor];
 
+    self.customView = label;
+    
+    [self.contentView addSubview:self.customView];
+}
+
+// Test custom view
+
+- (void)makeCustomCell:(UILabel *)view
+{
+    [self.customView removeFromSuperview];
+    
+    UIFont *font = [UIFont fontWithName:@"Arial" size:16];
+    NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:(view.text ? view.text : @"") attributes:@{NSFontAttributeName: font}];
+    CGRect rect = [attributedText boundingRectWithSize:(CGSize){220, 10000} options:NSStringDrawingUsesLineFragmentOrigin context:nil];
+    CGSize size = rect.size;
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    label.numberOfLines = 0;
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    label.text = (view.text ? view.text : @"");
+    label.font = font;
+    label.backgroundColor = [UIColor clearColor];
+    [label.layer setCornerRadius:8.0f];
+    [label.layer setBorderWidth:1.0];
+    [label.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    
     self.customView = label;
     
     [self.contentView addSubview:self.customView];

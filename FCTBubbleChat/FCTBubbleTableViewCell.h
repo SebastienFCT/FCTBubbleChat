@@ -14,4 +14,6 @@
 
 @property (strong) FCTBubbleData *data;
 
+- (id)initWithCustomView:(UILabel *)view;
+
 @end
