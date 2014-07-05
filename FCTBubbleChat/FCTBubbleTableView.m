@@ -10,32 +10,12 @@
 
 @interface FCTBubbleTableView ()
 
-@property (strong) NSMutableArray *nbBubble;
-
 @end
 
-@implementation FCTBubbleTableView {
-    NSMutableArray *data;
-}
-
-@synthesize nbBubble = _nbBubble;
+@implementation FCTBubbleTableView
 
 #pragma mark - init
 
-- (void)initFCTBubbleTableView
-{
-    self.delegate = self;
-    self.dataSource = self;
-}
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self initFCTBubbleTableView];
-    }
-    return self;
-}
 
 #pragma mark - UITableViewDataSource implementation
 
@@ -46,32 +26,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [data count];
+    return 0;
 }
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FCTBubbleData *object = [data objectAtIndex:indexPath.row];
-    UILabel *bubble = object.bubble;
-    CGFloat height = bubble.frame.size.height;
-    
-    return height;
-    NSLog(@"%f", height);
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FCTBubbleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FCTBubbleCell"];
-
-    if (cell == nil) {
-        
-        FCTBubbleData *object = [data objectAtIndex:indexPath.row];
-        UILabel *bubble = object.bubble;
-        
-        cell = [[FCTBubbleTableViewCell alloc] initWithCustomView:bubble];
-    }
-        
-    return cell;
+    return nil;
 }
 
 @end

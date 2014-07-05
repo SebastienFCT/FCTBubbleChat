@@ -10,9 +10,4 @@
 
 @interface FCTBubbleData : NSObject
 
-@property (strong) NSString *message;
-@property (strong) UILabel *bubble;
-
-- (id)initWithMessage:(NSString *)message;
-
 @end
