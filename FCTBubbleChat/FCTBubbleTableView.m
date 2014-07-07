@@ -13,7 +13,7 @@
 @end
 
 @implementation FCTBubbleTableView {
-    
+    NSMutableArray *bubbleData;
 }
 
 @synthesize bubbleDataSource = _bubbleDataSource;
@@ -48,8 +48,7 @@
 
 - (void)reloadData
 {
-    
-    NSMutableArray *bubbleData = [[NSMutableArray alloc] initWithCapacity:[self.bubbleDataSource numberOfRowForTableView:self]];
+    bubbleData = [[NSMutableArray alloc] initWithCapacity:[self.bubbleDataSource numberOfRowForTableView:self]];
     
     if (self.bubbleDataSource && [self.bubbleDataSource numberOfRowForTableView:self] > 0) {
         for (int i = 0; i < [self.bubbleDataSource numberOfRowForTableView:self]; i++) {
@@ -70,17 +69,26 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [bubbleData count];
 }
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 0;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    FCTBubbleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_type1"];
+    FCTBubbleData *data = [bubbleData objectAtIndex:indexPath.row];
+    
+    if (cell == nil) {
+        cell = [[FCTBubbleTableViewCell alloc] init];
+    }
+    
+    [cell.contentView addSubview:data.label];
+    
+    return cell;
 }
 
 @end
