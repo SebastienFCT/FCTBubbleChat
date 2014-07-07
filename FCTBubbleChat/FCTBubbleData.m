@@ -10,4 +10,14 @@
 
 @implementation FCTBubbleData
 
+@synthesize label = _label;
+
+- (id)initWithLabel:(UILabel *)label
+{
+    if (self = [super init]) {
+        self.label = label;
+    }
+    return self;
+}
+
 @end

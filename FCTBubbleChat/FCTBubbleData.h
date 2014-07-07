@@ -10,4 +10,8 @@
 
 @interface FCTBubbleData : NSObject
 
+@property (strong) UILabel *label;
+
+- (id)initWithLabel:(UILabel *)label;
+
 @end

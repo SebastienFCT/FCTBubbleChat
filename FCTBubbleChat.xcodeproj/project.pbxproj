@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F0F093119679ECC00937CB0 /* FCTBubbleTableViewDatasource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableViewDatasource.h; sourceTree = "<group>"; };
 		9F26163D196292BB007FF741 /* FCTBubbleChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCTBubbleChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F261640196292BB007FF741 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9F261642196292BB007FF741 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -175,6 +176,7 @@
 				9F26167019629C2C007FF741 /* FCTBubbleData.m */,
 				9F80F11C1963A2F400FF6132 /* FCTBubbleTableView.h */,
 				9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */,
+				9F0F093119679ECC00937CB0 /* FCTBubbleTableViewDatasource.h */,
 			);
 			name = CustomBubble;
 			sourceTree = "<group>";

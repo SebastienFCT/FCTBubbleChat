@@ -12,4 +12,6 @@
 
 @interface FCTBubbleTableView : UITableView<UITableViewDelegate, UITableViewDataSource>
 
+- (id)initForTest;
+
 @end
