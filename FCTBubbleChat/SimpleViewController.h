@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SimpleViewController : UIViewController
+#import "FCTBubbleTableViewDatasource.h"
+
+@interface SimpleViewController : UIViewController<FCTBubbleTableViewDatasource>
 
 @end

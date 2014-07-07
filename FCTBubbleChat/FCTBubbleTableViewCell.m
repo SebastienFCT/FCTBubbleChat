@@ -10,25 +10,24 @@
 
 @interface FCTBubbleTableViewCell ()
 
-@property (retain) UIView *customView;
-
 @end
 
 @implementation FCTBubbleTableViewCell
 
-@synthesize data = _data;
-
 - (id)init
 {
     if (self = [super init]) {
-        [self makeCustomCell];
+        // init method here
     }
     return self;
 }
 
-- (void)makeCustomCell
+- (id)initWithData:(FCTBubbleData *)data
 {
-    [self addSubview:_data.label];
+    if (self = [super init]) {
+        [self addSubview:data.label];
+    }
+    return self;
 }
 
 @end

@@ -12,9 +12,11 @@
 
 @synthesize label = _label;
 
-- (id)initWithLabel:(UILabel *)label
+- (id)initWithMessage:(NSString *)message
 {
     if (self = [super init]) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+        label.text = message;
         self.label = label;
     }
     return self;

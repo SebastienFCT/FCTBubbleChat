@@ -12,6 +12,6 @@
 
 @property (strong) UILabel *label;
 
-- (id)initWithLabel:(UILabel *)label;
+- (id)initWithMessage:(NSString *)message;
 
 @end

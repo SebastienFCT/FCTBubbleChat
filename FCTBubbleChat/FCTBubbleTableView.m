@@ -86,14 +86,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FCTBubbleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_type1"];
-    FCTBubbleData *data = [bubbleData objectAtIndex:indexPath.row];
+    FCTBubbleData *toInject = [bubbleData objectAtIndex:indexPath.row];
     
     if (cell == nil) {
-        cell = [[FCTBubbleTableViewCell alloc] init];
+        cell = [[FCTBubbleTableViewCell alloc] initWithData:toInject];
     }
-    
-    [cell.contentView addSubview:data.label];
-    
+        
     return cell;
 }
 

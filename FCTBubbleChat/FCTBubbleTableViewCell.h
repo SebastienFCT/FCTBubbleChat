@@ -12,6 +12,6 @@
 
 @interface FCTBubbleTableViewCell : UITableViewCell
 
-@property FCTBubbleData *data;
+- (id)initWithData:(FCTBubbleData *)data;
 
 @end
