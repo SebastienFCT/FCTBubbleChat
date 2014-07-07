@@ -12,7 +12,9 @@
 
 @end
 
-@implementation FCTBubbleTableView
+@implementation FCTBubbleTableView {
+    
+}
 
 @synthesize bubbleDataSource = _bubbleDataSource;
 
@@ -40,6 +42,23 @@
         // init
     }
     return self;
+}
+
+#pragma mark - reload data
+
+- (void)reloadData
+{
+    
+    NSMutableArray *bubbleData = [[NSMutableArray alloc] initWithCapacity:[self.bubbleDataSource numberOfRowForTableView:self]];
+    
+    if (self.bubbleDataSource && [self.bubbleDataSource numberOfRowForTableView:self] > 0) {
+        for (int i = 0; i < [self.bubbleDataSource numberOfRowForTableView:self]; i++) {
+            FCTBubbleData *singleData = [self.bubbleDataSource tableView:self dataForRow:i];
+            [bubbleData addObject:singleData];
+        }
+    }
+    
+    [super reloadData];
 }
 
 #pragma mark - UITableViewDataSource implementation

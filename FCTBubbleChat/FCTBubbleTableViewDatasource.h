@@ -16,7 +16,7 @@
 
 @required
 
-- (NSInteger)numberOfRowForTableView:(FCTBubbleTableView)tableView;
-- (FCTBubbleData *)tableView:(FCTBubbleTableView *) dataForRow:(NSInteger)row;
+- (NSInteger)numberOfRowForTableView:(FCTBubbleTableView *)tableView;
+- (FCTBubbleData *)tableView:(FCTBubbleTableView *)tableView dataForRow:(NSInteger)row;
 
 @end
