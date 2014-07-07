@@ -2,7 +2,7 @@
 //  FCTBubbleTableViewDatasource.h
 //  FCTBubbleChat
 //
-//  Created by Sebastien FCT on 7/5/14.
+//  Created by Sebastien FCT on 7/7/14.
 //  Copyright (c) 2014 Sebastien FCT. All rights reserved.
 //
 

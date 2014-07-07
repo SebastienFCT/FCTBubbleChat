@@ -36,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9F0F093119679ECC00937CB0 /* FCTBubbleTableViewDatasource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableViewDatasource.h; sourceTree = "<group>"; };
 		9F26163D196292BB007FF741 /* FCTBubbleChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCTBubbleChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F261640196292BB007FF741 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9F261642196292BB007FF741 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,6 +56,7 @@
 		9F26167019629C2C007FF741 /* FCTBubbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleData.m; sourceTree = "<group>"; };
 		9F2616761962B2D9007FF741 /* FCTBubbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableViewCell.h; sourceTree = "<group>"; };
 		9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleTableViewCell.m; sourceTree = "<group>"; };
+		9F411461196A423D000C9ED5 /* FCTBubbleTableViewDatasource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableViewDatasource.h; sourceTree = "<group>"; };
 		9F80F11C1963A2F400FF6132 /* FCTBubbleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableView.h; sourceTree = "<group>"; };
 		9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleTableView.m; sourceTree = "<group>"; };
 		9F80F1201963A56000FF6132 /* SimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleViewController.h; sourceTree = "<group>"; };
@@ -170,13 +170,13 @@
 		9F2616731962B290007FF741 /* CustomBubble */ = {
 			isa = PBXGroup;
 			children = (
-				9F2616761962B2D9007FF741 /* FCTBubbleTableViewCell.h */,
-				9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */,
 				9F26166F19629C2C007FF741 /* FCTBubbleData.h */,
 				9F26167019629C2C007FF741 /* FCTBubbleData.m */,
 				9F80F11C1963A2F400FF6132 /* FCTBubbleTableView.h */,
 				9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */,
-				9F0F093119679ECC00937CB0 /* FCTBubbleTableViewDatasource.h */,
+				9F2616761962B2D9007FF741 /* FCTBubbleTableViewCell.h */,
+				9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */,
+				9F411461196A423D000C9ED5 /* FCTBubbleTableViewDatasource.h */,
 			);
 			name = CustomBubble;
 			sourceTree = "<group>";

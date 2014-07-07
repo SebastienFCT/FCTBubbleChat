@@ -12,28 +12,32 @@
 
 @end
 
-@implementation FCTBubbleTableView {
-    NSMutableArray *bubbleStack;
-}
+@implementation FCTBubbleTableView
 
-#pragma mark - init
+@synthesize bubbleDataSource = _bubbleDataSource;
 
-// Init with garbage data in order to test
-- (void)basicInit
-{
-    self.dataSource = self;
-    self.delegate = self;
-    
-    NSString *data1 = @"Hello World";
-    NSString *data2 = @"Hello you, this message should be enough longer to be displayed in two row.... we all hop so!";
-    [bubbleStack addObject:data1];
-    [bubbleStack addObject:data2];
-}
+#pragma mark - Init
 
-- (id)initForTest
+- (id)init
 {
     if (self = [super init]) {
-        [self basicInit];
+        // init
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        // init
+    }
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        // init
     }
     return self;
 }

@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FCTBubbleTableViewDatasource.h"
 #import "FCTBubbleTableViewCell.h"
 
 @interface FCTBubbleTableView : UITableView<UITableViewDelegate, UITableViewDataSource>
 
-- (id)initForTest;
+@property (nonatomic, assign) id bubbleDataSource;
 
 @end
