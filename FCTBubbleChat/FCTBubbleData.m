@@ -18,7 +18,7 @@
         /* Detect the good size for the message */
         UIFont *font = [UIFont fontWithName:@"Arial" size:16];
         NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:(message ? message : @"") attributes:@{NSFontAttributeName: font}];
-        CGRect rect = [attributedText boundingRectWithSize:(CGSize){280, 10000} options:NSStringDrawingUsesLineFragmentOrigin context:nil];
+        CGRect rect = [attributedText boundingRectWithSize:(CGSize){260, 10000} options:NSStringDrawingUsesLineFragmentOrigin context:nil];
         
         /* Draw the label */
         CGSize size = rect.size;

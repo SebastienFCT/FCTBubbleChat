@@ -80,7 +80,9 @@
 
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    FCTBubbleData *object = [bubbleData objectAtIndex:indexPath.row];
+    UILabel *displayed = object.label;
+    return displayed.frame.size.height + 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
