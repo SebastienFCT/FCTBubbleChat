@@ -23,7 +23,7 @@
 - (id)init
 {
     if (self = [super init]) {
-        // init
+        [self commonInit];
     }
     return self;
 }
@@ -31,7 +31,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        // init
+        [self commonInit];
     }
     return self;
 }
@@ -39,9 +39,15 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        // init
+        [self commonInit];
     }
     return self;
+}
+
+- (void)commonInit
+{
+    self.delegate = self;
+    self.dataSource = self;
 }
 
 #pragma mark - reload data

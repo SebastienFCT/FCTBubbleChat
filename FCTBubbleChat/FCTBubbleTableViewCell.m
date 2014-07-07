@@ -16,7 +16,9 @@
 
 @implementation FCTBubbleTableViewCell
 
-- (id)initWithCustomView:(UILabel *)view
+@synthesize data = _data;
+
+- (id)init
 {
     if (self = [super init]) {
         [self makeCustomCell];
@@ -26,7 +28,7 @@
 
 - (void)makeCustomCell
 {
-    // Init the cell here
+    [self addSubview:_data.label];
 }
 
 @end
