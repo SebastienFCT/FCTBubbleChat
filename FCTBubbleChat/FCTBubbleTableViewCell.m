@@ -14,6 +14,8 @@
 
 @implementation FCTBubbleTableViewCell
 
+#pragma mark - cell init
+
 - (id)init
 {
     if (self = [super init]) {
@@ -25,9 +27,14 @@
 - (id)initWithData:(FCTBubbleData *)data
 {
     if (self = [super init]) {
-        [self addSubview:data.label];
+        [self makeCustomViewWithData:data];
     }
     return self;
+}
+
+- (void)makeCustomViewWithData:(FCTBubbleData *)data
+{
+    [self addSubview:data.label];
 }
 
 @end
