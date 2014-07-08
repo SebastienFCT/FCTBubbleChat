@@ -16,6 +16,7 @@
     UIView *background;
     UIView *adaptedView;
     FCTBubbleType type;
+    BOOL _avatarEnabled;
 }
 
 #pragma mark - cell init
@@ -28,9 +29,10 @@
     return self;
 }
 
-- (id)initWithData:(FCTBubbleData *)data
+- (id)initWithData:(FCTBubbleData *)data AvatarEnabled:(BOOL)avatarEnabled
 {
     if (self = [super init]) {
+        _avatarEnabled = (avatarEnabled ? avatarEnabled : NO);
         [self makeCustomViewWithData:data];
     }
     return self;
@@ -44,13 +46,18 @@
     
     [adaptedView removeFromSuperview];
     adaptedView = data.view;
+    
+    int avatarSpace;
+    avatarSpace = (_avatarEnabled ? 45 : 0);
 
     if (type == BubbleFromSomeone) {
-        background = [[UIView alloc] initWithFrame:CGRectMake(15, 5, data.view.frame.size.width + 10, data.view.frame.size.height + 10)];
-        adaptedView.frame = CGRectMake(20, 10, data.view.frame.size.width, data.view.frame.size.height);
+        background = [[UIView alloc] initWithFrame:CGRectMake(15 + avatarSpace, 5, data.view.frame.size.width + 10, data.view.frame.size.height + 10)];
+        adaptedView.frame = CGRectMake(20 + avatarSpace, 10, data.view.frame.size.width, data.view.frame.size.height);
+        [self setAvatarWithFrame:CGRectMake(5, 5, 40, 40)];
     } else if (type == BubbleFromMe) {
-        background = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width - data.view.frame.size.width - 25, 5, data.view.frame.size.width + 10, data.view.frame.size.height + 10)];
-        adaptedView.frame = CGRectMake(self.frame.size.width - data.view.frame.size.width - 20, 10, data.view.frame.size.width, data.view.frame.size.height);
+        background = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width - data.view.frame.size.width - 25 - avatarSpace, 5, data.view.frame.size.width + 10, data.view.frame.size.height + 10)];
+        adaptedView.frame = CGRectMake(self.frame.size.width - data.view.frame.size.width - 20 - avatarSpace, 10, data.view.frame.size.width, data.view.frame.size.height);
+        [self setAvatarWithFrame:CGRectMake(self.frame.size.width - 45, 5, 40, 40)];
     } else {
         background = [[UIView alloc] initWithFrame:CGRectMake(5, 5, data.view.frame.size.width + 10, data.view.frame.size.height + 10)];
         adaptedView.frame = CGRectMake(10, 10, data.view.frame.size.width, data.view.frame.size.height);
@@ -98,7 +105,15 @@
     CGContextSaveGState(context);
     CGContextAddPath(context, path);
     CGContextClip(context);
-    
+}
+
+- (void)setAvatarWithFrame:(CGRect)frame
+{
+    if (_avatarEnabled) {
+        UIImageView *avatar = [[UIImageView alloc] initWithFrame:frame];
+        avatar.image = [UIImage imageNamed:@"fctbc_ic_default_user.png"];
+        [self addSubview:avatar];
+    }
 }
 
 @end

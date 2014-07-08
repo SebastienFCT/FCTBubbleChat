@@ -17,6 +17,7 @@
 }
 
 @synthesize bubbleDataSource = _bubbleDataSource;
+@synthesize avatarEnabled = _avatarEnabled;
 
 #pragma mark - Init
 
@@ -48,6 +49,9 @@
 {
     self.delegate = self;
     self.dataSource = self;
+    
+    // Default values
+    _avatarEnabled = NO;
 }
 
 #pragma mark - reload data
@@ -88,17 +92,16 @@
 {
     FCTBubbleData *object = [bubbleData objectAtIndex:indexPath.row];
     UIView *displayed = object.view;
-    return displayed.frame.size.height + 20;
+    return MAX(50, displayed.frame.size.height + 20);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FCTBubbleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_type1"];
-    
     FCTBubbleData *toInject = [bubbleData objectAtIndex:indexPath.row];
     
     if (cell == nil) {
-        cell = [[FCTBubbleTableViewCell alloc] initWithData:toInject];
+        cell = [[FCTBubbleTableViewCell alloc] initWithData:toInject AvatarEnabled:_avatarEnabled];
     }
         
     return cell;

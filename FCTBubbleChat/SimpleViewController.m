@@ -77,6 +77,9 @@
     [data addObject:data11];
     
     bubbleTableView.bubbleDataSource = self;
+    
+    // Custom configuration
+    bubbleTableView.avatarEnabled = YES;
     [bubbleTableView reloadData];
 }
 

@@ -14,5 +14,6 @@
 @interface FCTBubbleTableView : UITableView<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, assign) id bubbleDataSource;
+@property BOOL avatarEnabled;
 
 @end

@@ -24,6 +24,7 @@
 		9F80F11E1963A2F400FF6132 /* FCTBubbleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */; };
 		9F80F1221963A56000FF6132 /* SimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80F1211963A56000FF6132 /* SimpleViewController.m */; };
 		9F9F617F196BD2CA001C2AAE /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F9F617E196BD2CA001C2AAE /* image.jpg */; };
+		9F9F6183196BEE6D001C2AAE /* fctbc_ic_default_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F9F6182196BEE6D001C2AAE /* fctbc_ic_default_user.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		9F80F1201963A56000FF6132 /* SimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleViewController.h; sourceTree = "<group>"; };
 		9F80F1211963A56000FF6132 /* SimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleViewController.m; sourceTree = "<group>"; };
 		9F9F617E196BD2CA001C2AAE /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		9F9F6182196BEE6D001C2AAE /* fctbc_ic_default_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fctbc_ic_default_user.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		9F261646196292BB007FF741 /* FCTBubbleChat */ = {
 			isa = PBXGroup;
 			children = (
+				9F9F6182196BEE6D001C2AAE /* fctbc_ic_default_user.png */,
 				9F9F617E196BD2CA001C2AAE /* image.jpg */,
 				9F80F11F1963A53F00FF6132 /* Test */,
 				9F2616731962B290007FF741 /* CustomBubble */,
@@ -272,6 +275,7 @@
 				9F26164B196292BB007FF741 /* InfoPlist.strings in Resources */,
 				9F261653196292BB007FF741 /* Images.xcassets in Resources */,
 				9F9F617F196BD2CA001C2AAE /* image.jpg in Resources */,
+				9F9F6183196BEE6D001C2AAE /* fctbc_ic_default_user.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
