@@ -87,7 +87,7 @@
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FCTBubbleData *object = [bubbleData objectAtIndex:indexPath.row];
-    UILabel *displayed = object.label;
+    UIView *displayed = object.view;
     return displayed.frame.size.height + 20;
 }
 

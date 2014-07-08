@@ -10,7 +10,7 @@
 
 @implementation FCTBubbleData
 
-@synthesize label = _label;
+@synthesize view = _view;
 
 - (id)initWithMessage:(NSString *)message AndType:(FCTBubbleType)type
 {
@@ -28,7 +28,7 @@
         label.text = (message ? message : @"");
         label.font = font;
         
-        self.label = label;
+        self.view = label;
         self.type = type;
     }
     return self;
@@ -37,7 +37,15 @@
 - (id)initWithPicture:(UIImage *)picture AndType:(FCTBubbleType)type
 {
     if (self = [super init]) {
-        //
+        UIImageView *canvas = [[UIImageView alloc] init];
+        if (picture.size.width > 260) {
+            canvas.frame = CGRectMake(0, 0, 260, picture.size.height / (picture.size.width / 260));
+        } else {
+            canvas.frame = CGRectMake(0, 0, picture.size.width, picture.size.height);
+        }
+        canvas.image = picture;
+        self.view = canvas;
+        self.type = type;
     }
     return self;
 }

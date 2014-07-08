@@ -43,17 +43,17 @@
     type = data.type;
     
     [adaptedView removeFromSuperview];
-    adaptedView = data.label;
+    adaptedView = data.view;
 
     if (type == BubbleFromSomeone) {
-        background = [[UIView alloc] initWithFrame:CGRectMake(15, 5, data.label.frame.size.width + 10, data.label.frame.size.height + 10)];
-        adaptedView.frame = CGRectMake(20, 10, data.label.frame.size.width, data.label.frame.size.height);
+        background = [[UIView alloc] initWithFrame:CGRectMake(15, 5, data.view.frame.size.width + 10, data.view.frame.size.height + 10)];
+        adaptedView.frame = CGRectMake(20, 10, data.view.frame.size.width, data.view.frame.size.height);
     } else if (type == BubbleFromMe) {
-        background = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width - data.label.frame.size.width - 25, 5, data.label.frame.size.width + 10, data.label.frame.size.height + 10)];
-        adaptedView.frame = CGRectMake(self.frame.size.width - data.label.frame.size.width - 20, 10, data.label.frame.size.width, data.label.frame.size.height);
+        background = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width - data.view.frame.size.width - 25, 5, data.view.frame.size.width + 10, data.view.frame.size.height + 10)];
+        adaptedView.frame = CGRectMake(self.frame.size.width - data.view.frame.size.width - 20, 10, data.view.frame.size.width, data.view.frame.size.height);
     } else {
-        background = [[UIView alloc] initWithFrame:CGRectMake(5, 5, data.label.frame.size.width + 10, data.label.frame.size.height + 10)];
-        adaptedView.frame = CGRectMake(10, 10, data.label.frame.size.width, data.label.frame.size.height);
+        background = [[UIView alloc] initWithFrame:CGRectMake(5, 5, data.view.frame.size.width + 10, data.view.frame.size.height + 10)];
+        adaptedView.frame = CGRectMake(10, 10, data.view.frame.size.width, data.view.frame.size.height);
     }
     
     [self addSubview:background];

@@ -16,13 +16,14 @@ typedef enum _FCTBubbleType {
 
 @interface FCTBubbleData : NSObject
 
-@property (strong) UILabel *label;
+@property (strong) UIView *view;
 @property FCTBubbleType type;
 
 //  Basic init of FCTBubbleData
-//
+//  ---
 //  Every step will be handled from a simple NSString and BubbleType
 
 - (id)initWithMessage:(NSString *)message AndType:(FCTBubbleType)type;
+- (id)initWithPicture:(UIImage *)picture AndType:(FCTBubbleType)type;
 
 @end

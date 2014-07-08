@@ -23,6 +23,7 @@
 		9F2616781962B2D9007FF741 /* FCTBubbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */; };
 		9F80F11E1963A2F400FF6132 /* FCTBubbleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */; };
 		9F80F1221963A56000FF6132 /* SimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80F1211963A56000FF6132 /* SimpleViewController.m */; };
+		9F9F617F196BD2CA001C2AAE /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F9F617E196BD2CA001C2AAE /* image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleTableView.m; sourceTree = "<group>"; };
 		9F80F1201963A56000FF6132 /* SimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleViewController.h; sourceTree = "<group>"; };
 		9F80F1211963A56000FF6132 /* SimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleViewController.m; sourceTree = "<group>"; };
+		9F9F617E196BD2CA001C2AAE /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		9F261646196292BB007FF741 /* FCTBubbleChat */ = {
 			isa = PBXGroup;
 			children = (
+				9F9F617E196BD2CA001C2AAE /* image.jpg */,
 				9F80F11F1963A53F00FF6132 /* Test */,
 				9F2616731962B290007FF741 /* CustomBubble */,
 				9F2616721962B27F007FF741 /* AppDelegate */,
@@ -268,6 +271,7 @@
 			files = (
 				9F26164B196292BB007FF741 /* InfoPlist.strings in Resources */,
 				9F261653196292BB007FF741 /* Images.xcassets in Resources */,
+				9F9F617F196BD2CA001C2AAE /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
