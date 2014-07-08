@@ -8,10 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum _FCTBubbleType {
+    BubbleFromMe = 0,
+    BubbleFromSomeone = 1,
+    BubbleFromServer = 2
+} FCTBubbleType;
+
 @interface FCTBubbleData : NSObject
 
 @property (strong) UILabel *label;
+@property FCTBubbleType type;
 
-- (id)initWithMessage:(NSString *)message;
+//  Basic init of FCTBubbleData
+//
+//  Every step will be handled from a simple NSString and BubbleType
+
+- (id)initWithMessage:(NSString *)message AndType:(FCTBubbleType)type;
 
 @end

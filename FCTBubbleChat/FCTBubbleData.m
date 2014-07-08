@@ -12,7 +12,7 @@
 
 @synthesize label = _label;
 
-- (id)initWithMessage:(NSString *)message
+- (id)initWithMessage:(NSString *)message AndType:(FCTBubbleType)type
 {
     if (self = [super init]) {
         /* Detect the good size for the message */
@@ -29,6 +29,7 @@
         label.font = font;
         
         self.label = label;
+        self.type = type;
     }
     return self;
 }
