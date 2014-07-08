@@ -34,4 +34,12 @@
     return self;
 }
 
+- (id)initWithPicture:(UIImage *)picture AndType:(FCTBubbleType)type
+{
+    if (self = [super init]) {
+        //
+    }
+    return self;
+}
+
 @end

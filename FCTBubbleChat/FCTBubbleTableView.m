@@ -56,6 +56,7 @@
 {
     /* Customize the tableView */
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.backgroundColor = [UIColor clearColor];
     self.showsVerticalScrollIndicator = NO;
     
     /* Setup the required data */
