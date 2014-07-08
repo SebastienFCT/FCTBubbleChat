@@ -54,6 +54,11 @@
 
 - (void)reloadData
 {
+    /* Customize the tableView */
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.showsVerticalScrollIndicator = NO;
+    
+    /* Setup the required data */
     bubbleData = [[NSMutableArray alloc] initWithCapacity:[self.bubbleDataSource numberOfRowForTableView:self]];
     
     if (self.bubbleDataSource && [self.bubbleDataSource numberOfRowForTableView:self] > 0) {
@@ -82,12 +87,13 @@
 {
     FCTBubbleData *object = [bubbleData objectAtIndex:indexPath.row];
     UILabel *displayed = object.label;
-    return displayed.frame.size.height + 5;
+    return displayed.frame.size.height + 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FCTBubbleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_type1"];
+    
     FCTBubbleData *toInject = [bubbleData objectAtIndex:indexPath.row];
     
     if (cell == nil) {

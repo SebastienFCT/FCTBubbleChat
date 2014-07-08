@@ -27,7 +27,6 @@
         label.lineBreakMode = NSLineBreakByWordWrapping;
         label.text = (message ? message : @"");
         label.font = font;
-        label.backgroundColor = [UIColor lightGrayColor];
         
         self.label = label;
     }
