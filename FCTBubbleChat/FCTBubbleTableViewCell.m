@@ -55,13 +55,33 @@
         adaptedView.frame = CGRectMake(10, 10, data.label.frame.size.width, data.label.frame.size.height);
     }
     
-    [background.layer setCornerRadius:8.0f];
-    [background.layer setBorderColor:[UIColor lightGrayColor].CGColor];
-    [background.layer setBorderWidth:1.0];
-    background.backgroundColor = [UIColor colorWithRed:241/255.0f green:241/255.0f blue:241/255.0f alpha:1.0f];
-    
     [self addSubview:background];
     [self addSubview:adaptedView];
+}
+
+- (void)drawRect:(CGRect)rect{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // Base shape
+    CGRect activeBounds = background.frame;
+    CGFloat cornerRadius = 10.0f;
+    CGFloat originX = activeBounds.origin.x;
+    CGFloat originY = activeBounds.origin.y;
+    CGFloat width = activeBounds.size.width;
+    CGFloat height = activeBounds.size.height;
+    
+    CGRect bPathFrame = CGRectMake(originX, originY, width, height);
+    CGPathRef path = [UIBezierPath bezierPathWithRoundedRect:bPathFrame cornerRadius:cornerRadius].CGPath;
+    
+    // Fill and Outerdrop shadow
+    CGContextAddPath(context, path);
+    CGContextSetFillColorWithColor(context, [UIColor colorWithRed:241/255.0f green:241/255.0f blue:241/255.0f alpha:1.0f].CGColor);
+    CGContextSetShadowWithColor(context, CGSizeMake(0.0f, 0.5f), 2.0f, [UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0f].CGColor);
+    CGContextDrawPath(context, kCGPathFill);
+    
+    CGContextSaveGState(context);
+    CGContextAddPath(context, path);
+    CGContextClip(context);
 }
 
 @end
