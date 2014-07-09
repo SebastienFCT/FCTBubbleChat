@@ -52,7 +52,7 @@
     [self.view addSubview:bubbleTableView];
     
     /* Init some garbage data */
-    FCTBubbleData *data1 = [[FCTBubbleData alloc] initWithMessage:@"Hello world!" AndType:BubbleFromMe];
+    FCTBubbleData *data1 = [[FCTBubbleData alloc] initWithMessage:@"Hello world!" AndType:BubbleFromMe AndAvatar:[UIImage imageNamed:@"fctbc_ic_custom_avatar.png"]];
     FCTBubbleData *data2 = [[FCTBubbleData alloc] initWithMessage:@"Hello you!" AndType:BubbleFromSomeone];
     FCTBubbleData *data3 = [[FCTBubbleData alloc] initWithMessage:@"Hey here, is there any way to display long text?" AndType:BubbleFromMe];
     FCTBubbleData *data4 = [[FCTBubbleData alloc] initWithMessage:@"Yeah, for example: \"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\"" AndType:BubbleFromSomeone];

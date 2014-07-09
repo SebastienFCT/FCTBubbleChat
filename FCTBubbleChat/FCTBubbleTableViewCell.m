@@ -17,6 +17,7 @@
     UIView *adaptedView;
     FCTBubbleType type;
     BOOL _avatarEnabled;
+    UIImage *_avatar;
 }
 
 #pragma mark - cell init
@@ -49,6 +50,11 @@
     
     int avatarSpace;
     avatarSpace = (_avatarEnabled ? 45 : 0);
+    if (data.avatar == nil) {
+        _avatar = [UIImage imageNamed:@"fctbc_ic_default_user.png"];
+    } else {
+        _avatar = data.avatar;
+    }
 
     if (type == BubbleFromSomeone) {
         background = [[UIView alloc] initWithFrame:CGRectMake(15 + avatarSpace, 5, data.view.frame.size.width + 10, data.view.frame.size.height + 10)];
@@ -111,7 +117,7 @@
 {
     if (_avatarEnabled) {
         UIImageView *avatar = [[UIImageView alloc] initWithFrame:frame];
-        avatar.image = [UIImage imageNamed:@"fctbc_ic_default_user.png"];
+        avatar.image = _avatar;
         [self addSubview:avatar];
     }
 }

@@ -18,6 +18,7 @@ typedef enum _FCTBubbleType {
 
 @property (strong) UIView *view;
 @property FCTBubbleType type;
+@property (strong) UIImage *avatar;
 
 //  Basic init of FCTBubbleData
 //  ---
@@ -25,5 +26,6 @@ typedef enum _FCTBubbleType {
 
 - (id)initWithMessage:(NSString *)message AndType:(FCTBubbleType)type;
 - (id)initWithPicture:(UIImage *)picture AndType:(FCTBubbleType)type;
+- (id)initWithMessage:(NSString *)message AndType:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
 
 @end
