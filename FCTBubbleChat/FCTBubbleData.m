@@ -11,9 +11,11 @@
 @implementation FCTBubbleData
 
 @synthesize view = _view;
+@synthesize type = _type;
 @synthesize avatar = _avatar;
+@synthesize date = _date;
 
-- (id)initWithMessage:(NSString *)message AndType:(FCTBubbleType)type
+- (id)initWithMessage:(NSString *)message Date:(NSDate *)date AndType:(FCTBubbleType)type
 {
     if (self = [super init]) {
         /* Detect the good size for the message */
@@ -28,6 +30,7 @@
         label.text = (message ? message : @"");
         label.font = font;
         
+        self.date = date;
         self.view = label;
         self.type = type;
         self.avatar = nil;
@@ -35,7 +38,7 @@
     return self;
 }
 
-- (id)initWithMessage:(NSString *)message AndType:(FCTBubbleType)type AndAvatar:(UIImage *)avatar
+- (id)initWithMessage:(NSString *)message Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar
 {
     
     if (self = [super init]) {
@@ -51,6 +54,7 @@
         label.text = (message ? message : @"");
         label.font = font;
         
+        self.date = date;
         self.view = label;
         self.type = type;
         self.avatar = avatar;
@@ -58,7 +62,7 @@
     return self;
 }
 
-- (id)initWithPicture:(UIImage *)picture AndType:(FCTBubbleType)type
+- (id)initWithPicture:(UIImage *)picture Date:(NSDate *)date AndType:(FCTBubbleType)type
 {
     if (self = [super init]) {
         UIImageView *canvas = [[UIImageView alloc] init];
@@ -67,7 +71,9 @@
         } else {
             canvas.frame = CGRectMake(0, 0, picture.size.width, picture.size.height);
         }
+        
         canvas.image = picture;
+        self.date = date;
         self.view = canvas;
         self.type = type;
         self.avatar = nil;
@@ -75,7 +81,7 @@
     return self;
 }
 
-- (id)initWithPicture:(UIImage *)picture AndType:(FCTBubbleType)type AndAvatar:(UIImage *)avatar
+- (id)initWithPicture:(UIImage *)picture Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar
 {
     if (self = [super init]) {
         UIImageView *canvas = [[UIImageView alloc] init];
@@ -84,7 +90,9 @@
         } else {
             canvas.frame = CGRectMake(0, 0, picture.size.width, picture.size.height);
         }
+        
         canvas.image = picture;
+        self.date = date;
         self.view = canvas;
         self.type = type;
         self.avatar = avatar;

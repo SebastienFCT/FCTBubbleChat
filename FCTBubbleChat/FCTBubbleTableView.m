@@ -14,6 +14,7 @@
 
 @implementation FCTBubbleTableView {
     NSMutableArray *bubbleData;
+    NSMutableArray *allSection;
 }
 
 @synthesize bubbleDataSource = _bubbleDataSource;
@@ -66,11 +67,24 @@
     
     /* Setup the required data */
     bubbleData = [[NSMutableArray alloc] initWithCapacity:[self.bubbleDataSource numberOfRowForTableView:self]];
+    allSection = [[NSMutableArray alloc] init];
+    NSDate *dateReference = [NSDate dateWithTimeIntervalSince1970:0];
+    NSMutableArray *newSection;
     
     if (self.bubbleDataSource && [self.bubbleDataSource numberOfRowForTableView:self] > 0) {
         for (int i = 0; i < [self.bubbleDataSource numberOfRowForTableView:self]; i++) {
             FCTBubbleData *singleData = [self.bubbleDataSource tableView:self dataForRow:i];
             [bubbleData addObject:singleData];
+        }
+        for (int i = 0; i < [bubbleData count]; i++) {
+            FCTBubbleData *data = [bubbleData objectAtIndex:i];
+            if ([data.date timeIntervalSinceDate:dateReference] > 1800) {
+                newSection = [[NSMutableArray alloc] init];
+                [newSection addObject:data.date];
+                [allSection addObject:newSection];
+                dateReference = data.date;
+            }
+            [newSection addObject:data];
         }
     }
     
@@ -81,7 +95,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [allSection count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -106,6 +120,27 @@
     }
         
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSArray *currentSection = [allSection objectAtIndex:section];
+    NSDate *date = [currentSection firstObject];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"DST"]]; // 974 on est toujours là
+    NSString *stringFromDate = [formatter stringFromDate:date];
+    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 20)];
+    dateLabel.text = stringFromDate;
+    dateLabel.textAlignment = NSTextAlignmentCenter;
+    dateLabel.font = [UIFont fontWithName:@"Arial" size:15];
+    
+    return dateLabel;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 20;
 }
 
 @end
