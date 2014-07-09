@@ -12,6 +12,6 @@
 
 @interface FCTBubbleTableViewCell : UITableViewCell
 
-- (id)initWithData:(FCTBubbleData *)data AvatarEnabled:(BOOL)avatarEnabled;
+- (id)initWithData:(FCTBubbleData *)data AvatarEnabled:(BOOL)avatarEnabled WithStyle:(FCTAvatarType)avatarStyle;
 
 @end

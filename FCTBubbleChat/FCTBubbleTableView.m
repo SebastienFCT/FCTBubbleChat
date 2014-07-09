@@ -18,6 +18,7 @@
 
 @synthesize bubbleDataSource = _bubbleDataSource;
 @synthesize avatarEnabled = _avatarEnabled;
+@synthesize avatarStyle = _avatarStyle;
 
 #pragma mark - Init
 
@@ -101,7 +102,7 @@
     FCTBubbleData *toInject = [bubbleData objectAtIndex:indexPath.row];
     
     if (cell == nil) {
-        cell = [[FCTBubbleTableViewCell alloc] initWithData:toInject AvatarEnabled:_avatarEnabled];
+        cell = [[FCTBubbleTableViewCell alloc] initWithData:toInject AvatarEnabled:_avatarEnabled WithStyle:_avatarStyle];
     }
         
     return cell;

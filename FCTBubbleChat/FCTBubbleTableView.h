@@ -15,5 +15,6 @@
 
 @property (nonatomic, assign) id bubbleDataSource;
 @property BOOL avatarEnabled;
+@property FCTAvatarType avatarStyle;
 
 @end

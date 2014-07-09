@@ -75,4 +75,21 @@
     return self;
 }
 
+- (id)initWithPicture:(UIImage *)picture AndType:(FCTBubbleType)type AndAvatar:(UIImage *)avatar
+{
+    if (self = [super init]) {
+        UIImageView *canvas = [[UIImageView alloc] init];
+        if (picture.size.width > 210) {
+            canvas.frame = CGRectMake(0, 0, 210, picture.size.height / (picture.size.width / 210));
+        } else {
+            canvas.frame = CGRectMake(0, 0, picture.size.width, picture.size.height);
+        }
+        canvas.image = picture;
+        self.view = canvas;
+        self.type = type;
+        self.avatar = avatar;
+    }
+    return self;
+}
+
 @end

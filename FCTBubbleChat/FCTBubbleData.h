@@ -14,6 +14,13 @@ typedef enum _FCTBubbleType {
     BubbleFromServer = 2
 } FCTBubbleType;
 
+typedef enum _FCTAvatarType {
+    basicAvatar = 0,
+    squarreAvatar = 1,
+    circleAvatar = 2,
+    banneAvatar = 3
+} FCTAvatarType;
+
 @interface FCTBubbleData : NSObject
 
 @property (strong) UIView *view;
@@ -22,10 +29,17 @@ typedef enum _FCTBubbleType {
 
 //  Basic init of FCTBubbleData
 //  ---
-//  Every step will be handled from a simple NSString and BubbleType
+//  Every step will be handled from a simple NSString / UIImage and BubbleType
 
 - (id)initWithMessage:(NSString *)message AndType:(FCTBubbleType)type;
 - (id)initWithPicture:(UIImage *)picture AndType:(FCTBubbleType)type;
+
+//  FCTBubbleData with avatar
+//  ---
+//  Override the default avatar for a specific cell
+//  avatarEnabled property of FCTTableView should be set to "YES"
+
 - (id)initWithMessage:(NSString *)message AndType:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
+- (id)initWithPicture:(UIImage *)picture AndType:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
 
 @end

@@ -18,6 +18,7 @@
     FCTBubbleType type;
     BOOL _avatarEnabled;
     UIImage *_avatar;
+    FCTAvatarType _avatarStyle;
 }
 
 #pragma mark - cell init
@@ -30,10 +31,11 @@
     return self;
 }
 
-- (id)initWithData:(FCTBubbleData *)data AvatarEnabled:(BOOL)avatarEnabled
+- (id)initWithData:(FCTBubbleData *)data AvatarEnabled:(BOOL)avatarEnabled WithStyle:(FCTAvatarType)avatarStyle
 {
     if (self = [super init]) {
         _avatarEnabled = (avatarEnabled ? avatarEnabled : NO);
+        _avatarStyle = avatarStyle;
         [self makeCustomViewWithData:data];
     }
     return self;
@@ -119,6 +121,17 @@
         UIImageView *avatar = [[UIImageView alloc] initWithFrame:frame];
         avatar.image = _avatar;
         [self addSubview:avatar];
+        
+        if (_avatarStyle == circleAvatar) {
+            [avatar.layer setCornerRadius:frame.size.width / 2];
+            [avatar.layer setBorderColor:[UIColor whiteColor].CGColor];
+            [avatar.layer setBorderWidth:1.0f];
+            avatar.layer.masksToBounds = YES;
+        } else if (_avatarStyle == squarreAvatar) {
+            [avatar.layer setBorderColor:[UIColor whiteColor].CGColor];
+            [avatar.layer setBorderWidth:1.0f];
+            avatar.layer.masksToBounds = YES;
+        }
     }
 }
 
