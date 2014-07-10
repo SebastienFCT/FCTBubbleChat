@@ -59,9 +59,15 @@
     
     FCTBubbleData *data1 = [[FCTBubbleData alloc] initWithMessage:@"Hello world!" Date:date Type:BubbleFromMe AndAvatar:[UIImage imageNamed:@"fctbc_ic_custom_avatar.png"]];
     FCTBubbleData *data2 = [[FCTBubbleData alloc] initWithMessage:@"Hello you!" Date:date AndType:BubbleFromSomeone];
+    FCTBubbleData *data3 = [[FCTBubbleData alloc] initWithMessage:@"Long time no see! 我现在吃西瓜。" Date:[NSDate date] Type:BubbleFromMe AndAvatar:[UIImage imageNamed:@"fctbc_ic_custom_avatar.png"]];
+    FCTBubbleData *data4 = [[FCTBubbleData alloc] initWithMessage:@"给我看！" Date:[NSDate date] AndType:BubbleFromSomeone];
+    FCTBubbleData *data5 = [[FCTBubbleData alloc] initWithPicture:[UIImage imageNamed:@"image.jpg"] Date:[NSDate date] Type:BubbleFromMe AndAvatar:[UIImage imageNamed:@"fctbc_ic_custom_avatar.png"]];
     
     [data addObject:data1];
     [data addObject:data2];
+    [data addObject:data3];
+    [data addObject:data4];
+    [data addObject:data5];
     
     bubbleTableView.bubbleDataSource = self;
     
