@@ -20,6 +20,7 @@
 @synthesize bubbleDataSource = _bubbleDataSource;
 @synthesize avatarEnabled = _avatarEnabled;
 @synthesize avatarStyle = _avatarStyle;
+@synthesize sound = _sound;
 
 #pragma mark - Init
 
@@ -86,7 +87,6 @@
             }
             [newSection addObject:data];
         }
-        NSLog(@"%d", [newSection count]);
     }
     
     [super reloadData];
@@ -113,19 +113,21 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"cell_type0"];
         NSArray *array = [allSection objectAtIndex:indexPath.section];
         NSDate *date = [array objectAtIndex:indexPath.row];
+        
+        if (cell == nil) {
+            cell = [[FCTBubbleTableViewCell alloc] init];
+        }
+        
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
         [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"DST"]]; // 974 on est toujours là
         NSString *stringFromDate = [formatter stringFromDate:date];
-        UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 20)];
+        UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, self.frame.size.width, 20)];
         dateLabel.text = stringFromDate;
         dateLabel.textAlignment = NSTextAlignmentCenter;
         dateLabel.font = [UIFont fontWithName:@"Arial" size:12];
         
-        if (cell == nil) {
-            cell = [[FCTBubbleTableViewCell alloc] init];
-            [cell addSubview:dateLabel];
-        }
+        [cell addSubview:dateLabel];
         
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"cell_type1"];
@@ -143,7 +145,7 @@
 - (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        return 30;
+        return 40;
     } else {
         NSArray *array = [allSection objectAtIndex:indexPath.section];
         FCTBubbleData *object = [array objectAtIndex:indexPath.row];

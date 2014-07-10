@@ -14,6 +14,7 @@
 @synthesize type = _type;
 @synthesize avatar = _avatar;
 @synthesize date = _date;
+@synthesize soundPath = _soundPath;
 
 - (id)initWithMessage:(NSString *)message Date:(NSDate *)date AndType:(FCTBubbleType)type
 {
@@ -94,6 +95,22 @@
         canvas.image = picture;
         self.date = date;
         self.view = canvas;
+        self.type = type;
+        self.avatar = avatar;
+    }
+    return self;
+}
+
+- (id)initWithSound:(NSURL *)soundPath Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar
+{
+    if (self = [super init]) {
+        UIButton *soundBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        [soundBtn setImage:[UIImage imageNamed:@"fctbc_ic_sound.png"] forState:UIControlStateNormal];
+        [soundBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
+        self.soundPath = soundPath;
+        self.date = date;
+        self.view = soundBtn;
         self.type = type;
         self.avatar = avatar;
     }

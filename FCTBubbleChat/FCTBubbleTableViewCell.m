@@ -19,6 +19,8 @@
     BOOL _avatarEnabled;
     UIImage *_avatar;
     FCTAvatarType _avatarStyle;
+    SystemSoundID sound;
+    NSURL *soundPath;
 }
 
 #pragma mark - cell init
@@ -48,7 +50,14 @@
     type = data.type;
     
     [adaptedView removeFromSuperview];
-    adaptedView = data.view;
+    if ([data.view isKindOfClass:[UIButton class]]) {
+        UIButton *btn = (UIButton *)data.view;
+        [btn addTarget:self action:@selector(playSound) forControlEvents:UIControlEventTouchUpInside];
+        soundPath = data.soundPath;
+        adaptedView = btn;
+    } else {
+        adaptedView = data.view;
+    }
     
     int avatarSpace;
     avatarSpace = (_avatarEnabled ? 45 : 0);
@@ -133,6 +142,12 @@
             avatar.layer.masksToBounds = YES;
         }
     }
+}
+
+- (void)playSound
+{
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundPath, &(sound));
+    AudioServicesPlaySystemSound(sound);
 }
 
 @end

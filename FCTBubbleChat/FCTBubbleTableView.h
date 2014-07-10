@@ -16,5 +16,6 @@
 @property (nonatomic, assign) id bubbleDataSource;
 @property BOOL avatarEnabled;
 @property FCTAvatarType avatarStyle;
+@property SystemSoundID sound;
 
 @end

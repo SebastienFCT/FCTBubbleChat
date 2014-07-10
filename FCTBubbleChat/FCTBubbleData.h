@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@import AVFoundation;
+
 typedef enum _FCTBubbleType {
     BubbleFromMe = 0,
     BubbleFromSomeone = 1,
@@ -27,6 +29,7 @@ typedef enum _FCTAvatarType {
 @property FCTBubbleType type;
 @property (strong) UIImage *avatar;
 @property (strong) NSDate *date;
+@property NSURL *soundPath;
 
 //  Basic init of FCTBubbleData
 //  ---
@@ -42,5 +45,6 @@ typedef enum _FCTAvatarType {
 
 - (id)initWithMessage:(NSString *)message Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
 - (id)initWithPicture:(UIImage *)picture Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
+- (id)initWithSound:(NSURL *)soundPath Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
 
 @end
