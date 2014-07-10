@@ -10,7 +10,7 @@
 
 #import "FCTBubbleData.h"
 
-@interface FCTBubbleTableViewCell : UITableViewCell
+@interface FCTBubbleTableViewCell : UITableViewCell<AVAudioPlayerDelegate>
 
 - (id)initWithData:(FCTBubbleData *)data AvatarEnabled:(BOOL)avatarEnabled WithStyle:(FCTAvatarType)avatarStyle;
 

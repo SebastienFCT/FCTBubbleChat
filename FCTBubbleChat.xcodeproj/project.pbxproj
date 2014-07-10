@@ -24,6 +24,8 @@
 		9F30D976196E34CB0019693D /* test.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9F30D975196E34CB0019693D /* test.caf */; };
 		9F30D97C196E3AF60019693D /* fctbc_ic_sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F30D97B196E3AF60019693D /* fctbc_ic_sound.png */; };
 		9F4385F0196D1DD90096A2A9 /* fctbc_ic_custom_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F4385EF196D1DD90096A2A9 /* fctbc_ic_custom_avatar.png */; };
+		9F7707A3196E4E5900C7D389 /* test2.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 9F7707A2196E4E5900C7D389 /* test2.ogg */; };
+		9F7707A7196E6DA400C7D389 /* test3.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 9F7707A6196E6DA400C7D389 /* test3.aiff */; };
 		9F80F11E1963A2F400FF6132 /* FCTBubbleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */; };
 		9F80F1221963A56000FF6132 /* SimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F80F1211963A56000FF6132 /* SimpleViewController.m */; };
 		9F9F617F196BD2CA001C2AAE /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9F9F617E196BD2CA001C2AAE /* image.jpg */; };
@@ -65,6 +67,8 @@
 		9F30D97B196E3AF60019693D /* fctbc_ic_sound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fctbc_ic_sound.png; sourceTree = "<group>"; };
 		9F411461196A423D000C9ED5 /* FCTBubbleTableViewDatasource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableViewDatasource.h; sourceTree = "<group>"; };
 		9F4385EF196D1DD90096A2A9 /* fctbc_ic_custom_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fctbc_ic_custom_avatar.png; sourceTree = "<group>"; };
+		9F7707A2196E4E5900C7D389 /* test2.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.ogg; sourceTree = "<group>"; };
+		9F7707A6196E6DA400C7D389 /* test3.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = test3.aiff; sourceTree = "<group>"; };
 		9F80F11C1963A2F400FF6132 /* FCTBubbleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCTBubbleTableView.h; sourceTree = "<group>"; };
 		9F80F11D1963A2F400FF6132 /* FCTBubbleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTBubbleTableView.m; sourceTree = "<group>"; };
 		9F80F1201963A56000FF6132 /* SimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleViewController.h; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 		9F261646196292BB007FF741 /* FCTBubbleChat */ = {
 			isa = PBXGroup;
 			children = (
+				9F7707A6196E6DA400C7D389 /* test3.aiff */,
+				9F7707A2196E4E5900C7D389 /* test2.ogg */,
 				9F30D975196E34CB0019693D /* test.caf */,
 				9F30D97B196E3AF60019693D /* fctbc_ic_sound.png */,
 				9F4385EF196D1DD90096A2A9 /* fctbc_ic_custom_avatar.png */,
@@ -285,11 +291,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F30D976196E34CB0019693D /* test.caf in Resources */,
+				9F7707A7196E6DA400C7D389 /* test3.aiff in Resources */,
 				9F26164B196292BB007FF741 /* InfoPlist.strings in Resources */,
 				9F261653196292BB007FF741 /* Images.xcassets in Resources */,
 				9F9F617F196BD2CA001C2AAE /* image.jpg in Resources */,
 				9F9F6183196BEE6D001C2AAE /* fctbc_ic_default_user.png in Resources */,
 				9F4385F0196D1DD90096A2A9 /* fctbc_ic_custom_avatar.png in Resources */,
+				9F7707A3196E4E5900C7D389 /* test2.ogg in Resources */,
 				9F30D97C196E3AF60019693D /* fctbc_ic_sound.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

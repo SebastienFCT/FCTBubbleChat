@@ -21,6 +21,8 @@
     FCTAvatarType _avatarStyle;
     SystemSoundID sound;
     NSURL *soundPath;
+    AVAudioSession *audioSession;
+    AVAudioPlayer *soundMusicPlayer;
 }
 
 #pragma mark - cell init
@@ -51,9 +53,10 @@
     
     [adaptedView removeFromSuperview];
     if ([data.view isKindOfClass:[UIButton class]]) {
-        UIButton *btn = (UIButton *)data.view;
-        [btn addTarget:self action:@selector(playSound) forControlEvents:UIControlEventTouchUpInside];
         soundPath = data.soundPath;
+        [self configureAudioPlayer];
+        UIButton *btn = (UIButton *)data.view;
+        [btn addTarget:self action:@selector(PlayMusic) forControlEvents:UIControlEventTouchUpInside];
         adaptedView = btn;
     } else {
         adaptedView = data.view;
@@ -144,10 +147,29 @@
     }
 }
 
-- (void)playSound
-{
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundPath, &(sound));
-    AudioServicesPlaySystemSound(sound);
+- (void)configureAudioPlayer {
+    soundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundPath error:nil];
+    soundMusicPlayer.delegate = self;
+    soundMusicPlayer.numberOfLoops = 0;
+    [soundMusicPlayer prepareToPlay];
+}
+
+- (void)PlayMusic {
+	if ([audioSession isOtherAudioPlaying]) {
+        return;
+    }
+    
+    [soundMusicPlayer play];
+}
+
+#pragma mark: AVAudioPlayerDelegate methods
+
+- (void) audioPlayerBeginInterruption: (AVAudioPlayer *) player {
+    
+}
+
+- (void) audioPlayerEndInterruption: (AVAudioPlayer *) player withOptions:(NSUInteger) flags{
+    
 }
 
 @end

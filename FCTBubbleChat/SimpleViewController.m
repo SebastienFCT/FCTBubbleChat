@@ -63,7 +63,7 @@
     FCTBubbleData *data4 = [[FCTBubbleData alloc] initWithMessage:@"给我看！" Date:[NSDate date] AndType:BubbleFromSomeone];
     FCTBubbleData *data5 = [[FCTBubbleData alloc] initWithPicture:[UIImage imageNamed:@"image.jpg"] Date:[NSDate date] Type:BubbleFromMe AndAvatar:[UIImage imageNamed:@"fctbc_ic_custom_avatar.png"]];
     
-    NSString *sound = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"caf"];
+    NSString *sound = [[NSBundle mainBundle] pathForResource:@"test3" ofType:@"aiff"];
 	NSURL *soundURL = [NSURL fileURLWithPath:sound];
     FCTBubbleData *data6 = [[FCTBubbleData alloc] initWithSound:soundURL Date:[NSDate date] Type:BubbleFromMe AndAvatar:[UIImage imageNamed:@"fctbc_ic_custom_avatar.png"]];
     
