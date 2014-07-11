@@ -33,15 +33,16 @@ typedef enum _FCTAvatarType {
 
 //  Basic init of FCTBubbleData
 //  ---
-//  Every step will be handled from a simple NSString / UIImage and BubbleType
+//  Every step will be handled from a simple String / Image / Sound and BubbleType
 
 - (id)initWithMessage:(NSString *)message Date:(NSDate *)date AndType:(FCTBubbleType)type;
 - (id)initWithPicture:(UIImage *)picture Date:(NSDate *)date AndType:(FCTBubbleType)type;
+- (id)initWithSound:(NSURL *)soundPath Date:(NSDate *)date Type:(FCTBubbleType)type;
 
 //  FCTBubbleData with avatar
 //  ---
 //  Override the default avatar for a specific cell
-//  avatarEnabled property of FCTTableView should be set to "YES"
+//  avatarEnabled property of your FCTTableView should be set to "YES"
 
 - (id)initWithMessage:(NSString *)message Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
 - (id)initWithPicture:(UIImage *)picture Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;

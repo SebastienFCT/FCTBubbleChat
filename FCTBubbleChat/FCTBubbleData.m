@@ -18,25 +18,7 @@
 
 - (id)initWithMessage:(NSString *)message Date:(NSDate *)date AndType:(FCTBubbleType)type
 {
-    if (self = [super init]) {
-        /* Detect the good size for the message */
-        UIFont *font = [UIFont fontWithName:@"Arial" size:16];
-        NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:(message ? message : @"") attributes:@{NSFontAttributeName: font}];
-        CGRect rect = [attributedText boundingRectWithSize:(CGSize){210, 10000} options:NSStringDrawingUsesLineFragmentOrigin context:nil];
-        
-        CGSize size = rect.size;
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-        label.numberOfLines = 0;
-        label.lineBreakMode = NSLineBreakByWordWrapping;
-        label.text = (message ? message : @"");
-        label.font = font;
-        
-        self.date = date;
-        self.view = label;
-        self.type = type;
-        self.avatar = nil;
-    }
-    return self;
+    return [self initWithMessage:message Date:date Type:type AndAvatar:nil];
 }
 
 - (id)initWithMessage:(NSString *)message Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar
@@ -65,21 +47,7 @@
 
 - (id)initWithPicture:(UIImage *)picture Date:(NSDate *)date AndType:(FCTBubbleType)type
 {
-    if (self = [super init]) {
-        UIImageView *canvas = [[UIImageView alloc] init];
-        if (picture.size.width > 210) {
-            canvas.frame = CGRectMake(0, 0, 210, picture.size.height / (picture.size.width / 210));
-        } else {
-            canvas.frame = CGRectMake(0, 0, picture.size.width, picture.size.height);
-        }
-        
-        canvas.image = picture;
-        self.date = date;
-        self.view = canvas;
-        self.type = type;
-        self.avatar = nil;
-    }
-    return self;
+    return [self initWithPicture:picture Date:date Type:type AndAvatar:nil];
 }
 
 - (id)initWithPicture:(UIImage *)picture Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar
@@ -99,6 +67,11 @@
         self.avatar = avatar;
     }
     return self;
+}
+
+- (id)initWithSound:(NSURL *)soundPath Date:(NSDate *)date Type:(FCTBubbleType)type
+{
+    return [self initWithSound:soundPath Date:date Type:type AndAvatar:nil];
 }
 
 - (id)initWithSound:(NSURL *)soundPath Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar
