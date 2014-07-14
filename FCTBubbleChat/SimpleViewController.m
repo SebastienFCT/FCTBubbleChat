@@ -110,18 +110,19 @@
     [receive.layer setBorderWidth:1.0];
     [receive.layer setBorderColor:[UIColor colorWithRed:209/255.0f green:213/255.0f blue:218/255.0f alpha:1.0f].CGColor];
     
-    [chatView addSubview:receive];
-    
     UIButton *send = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 55, 5, 50, 30)];
     [send setTitle:@"OUT" forState:UIControlStateNormal];
     [send setTitleColor:[UIColor colorWithRed:209/255.0f green:213/255.0f blue:218/255.0f alpha:1.0f] forState:UIControlStateNormal];
     [send.layer setCornerRadius:4.0];
     [send.layer setBorderWidth:1.0];
     [send.layer setBorderColor:[UIColor colorWithRed:209/255.0f green:213/255.0f blue:218/255.0f alpha:1.0f].CGColor];
-    
-    [chatView addSubview:send];
+    [send addTarget:self action:@selector(sendMessage:) forControlEvents:UIControlEventTouchUpInside];
+
     
     [self.view addSubview:chatView];
+    
+    [chatView addSubview:send];
+    [chatView addSubview:receive];
 }
 
 #pragma mark - FCTTableView datasource
@@ -184,7 +185,22 @@
 
 - (void)sendMessage:(id)sender
 {
-    
+    if ([customtextField isFirstResponder]) {
+        [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        NSString *testString = customtextField.text;
+        NSString *trimmedString = [testString stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        if (trimmedString.length > 0)
+        {
+            FCTBubbleData *toSend = [[FCTBubbleData alloc] initWithMessage:customtextField.text Date:[NSDate date] Type:BubbleFromMe AndAvatar:[UIImage imageNamed:@"fctbc_ic_custom_avatar.png"]];
+            [data addObject:toSend];
+            customtextField.text = @"";
+            [customtextField resignFirstResponder];
+            [bubbleTableView reloadData];
+        } else {
+            [customtextField resignFirstResponder];
+        }
+    }
 }
 
 @end
