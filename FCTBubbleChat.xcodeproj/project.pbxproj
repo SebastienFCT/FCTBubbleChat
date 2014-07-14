@@ -134,16 +134,8 @@
 		9F261646196292BB007FF741 /* FCTBubbleChat */ = {
 			isa = PBXGroup;
 			children = (
-				9F7707A6196E6DA400C7D389 /* test3.aiff */,
-				9F7707A2196E4E5900C7D389 /* test2.ogg */,
-				9F30D975196E34CB0019693D /* test.caf */,
-				9F30D97B196E3AF60019693D /* fctbc_ic_sound.png */,
-				9F4385EF196D1DD90096A2A9 /* fctbc_ic_custom_avatar.png */,
-				9F9F6182196BEE6D001C2AAE /* fctbc_ic_default_user.png */,
-				9F9F617E196BD2CA001C2AAE /* image.jpg */,
 				9F80F11F1963A53F00FF6132 /* Test */,
-				9F2616731962B290007FF741 /* CustomBubble */,
-				9F2616721962B27F007FF741 /* AppDelegate */,
+				9F2616731962B290007FF741 /* src */,
 				9F261652196292BB007FF741 /* Images.xcassets */,
 				9F261647196292BB007FF741 /* Supporting Files */,
 			);
@@ -188,9 +180,10 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
-		9F2616731962B290007FF741 /* CustomBubble */ = {
+		9F2616731962B290007FF741 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				9F9F6182196BEE6D001C2AAE /* fctbc_ic_default_user.png */,
 				9F26166F19629C2C007FF741 /* FCTBubbleData.h */,
 				9F26167019629C2C007FF741 /* FCTBubbleData.m */,
 				9F80F11C1963A2F400FF6132 /* FCTBubbleTableView.h */,
@@ -199,12 +192,27 @@
 				9F2616771962B2D9007FF741 /* FCTBubbleTableViewCell.m */,
 				9F411461196A423D000C9ED5 /* FCTBubbleTableViewDatasource.h */,
 			);
-			name = CustomBubble;
+			name = src;
+			sourceTree = "<group>";
+		};
+		9F4A69551973AA8200B25361 /* Test resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F7707A6196E6DA400C7D389 /* test3.aiff */,
+				9F7707A2196E4E5900C7D389 /* test2.ogg */,
+				9F30D975196E34CB0019693D /* test.caf */,
+				9F30D97B196E3AF60019693D /* fctbc_ic_sound.png */,
+				9F4385EF196D1DD90096A2A9 /* fctbc_ic_custom_avatar.png */,
+				9F9F617E196BD2CA001C2AAE /* image.jpg */,
+			);
+			name = "Test resources";
 			sourceTree = "<group>";
 		};
 		9F80F11F1963A53F00FF6132 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				9F2616721962B27F007FF741 /* AppDelegate */,
+				9F4A69551973AA8200B25361 /* Test resources */,
 				9F80F1201963A56000FF6132 /* SimpleViewController.h */,
 				9F80F1211963A56000FF6132 /* SimpleViewController.m */,
 			);

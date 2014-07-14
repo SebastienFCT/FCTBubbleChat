@@ -7,6 +7,8 @@ In building...
 
 Installation
 =============
+* Download the current project
+* Copy the `src` folder within your own project.
 
 Using FCTBubbleChat
 =============
@@ -35,15 +37,15 @@ Your cell generation must be done by providing `FCTBubbleData`, for now you can 
 
 You can also provide avatar in your custom table view by setting its `avatarEnabled` to `YES`, in that case, you should use the following init for your `FCTBubbleData` generation (note that if you do not provide them, the avatar will be set to its default value: nil which is generating the default avatar):
 
-
     - (id)initWithMessage:(NSString *)message Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
     - (id)initWithPicture:(UIImage *)picture Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
     - (id)initWithSound:(NSURL *)soundPath Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
 
 Known issue:
 =============
-- Actually crashing with 64bit processor.
+- This project is not not available for non-ARC project.
 
 Licence
 =============
 
+FCTBubbleChat is available under MIT license, please see the `LICENSE.md` file for more information.
