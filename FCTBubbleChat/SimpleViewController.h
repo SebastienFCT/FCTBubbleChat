@@ -10,6 +10,6 @@
 
 #import "FCTBubbleTableViewDatasource.h"
 
-@interface SimpleViewController : UIViewController<FCTBubbleTableViewDatasource>
+@interface SimpleViewController : UIViewController<FCTBubbleTableViewDatasource, UITextFieldDelegate>
 
 @end

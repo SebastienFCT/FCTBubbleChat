@@ -16,7 +16,10 @@
 @end
 
 @implementation SimpleViewController {
+    UITextField *customtextField;
     NSMutableArray *data;
+    FCTBubbleTableView *bubbleTableView;
+    UIView *chatView;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,6 +35,8 @@
 {
     /* Init objects */
     data = [[NSMutableArray alloc] init];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     // Do any additional setup after loading the view.
     
     [self makeTheView];
@@ -48,7 +53,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     /* Init the custom tableView */
-    FCTBubbleTableView *bubbleTableView = [[FCTBubbleTableView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 20)];
+    bubbleTableView = [[FCTBubbleTableView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 60)];
     [self.view addSubview:bubbleTableView];
     
     /* Init some garbage data */
@@ -81,6 +86,42 @@
     //bubbleTableView.avatarStyle = circleAvatar;
     
     [bubbleTableView reloadData];
+    
+    chatView = [[UIView alloc] initWithFrame:CGRectMake(-1, self.view.frame.size.height - 40, self.view.frame.size.width + 2, 140)];
+    [chatView.layer setBorderColor:[UIColor colorWithRed:166/255.0f green:166/255.0f blue:166/255.0f alpha:1.0f].CGColor];
+    [chatView.layer setBorderWidth:1.0];
+    
+    customtextField = [[UITextField alloc] initWithFrame:CGRectMake(60, 5, self.view.frame.size.width - 120, 30)];
+    customtextField.placeholder = @"Type your message...";
+    customtextField.delegate = self;
+    [customtextField.layer setCornerRadius:5.0];
+    [customtextField.layer setBorderWidth:1.0];
+    [customtextField.layer setBorderColor:[UIColor colorWithRed:209/255.0f green:213/255.0f blue:218/255.0f alpha:1.0f].CGColor];
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 30)];
+    customtextField.leftView = paddingView;
+    customtextField.leftViewMode = UITextFieldViewModeAlways;
+    
+    [chatView addSubview:customtextField];
+    
+    UIButton *receive = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 50, 30)];
+    [receive setTitle:@"IN" forState:UIControlStateNormal];
+    [receive setTitleColor:[UIColor colorWithRed:209/255.0f green:213/255.0f blue:218/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [receive.layer setCornerRadius:4.0];
+    [receive.layer setBorderWidth:1.0];
+    [receive.layer setBorderColor:[UIColor colorWithRed:209/255.0f green:213/255.0f blue:218/255.0f alpha:1.0f].CGColor];
+    
+    [chatView addSubview:receive];
+    
+    UIButton *send = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 55, 5, 50, 30)];
+    [send setTitle:@"OUT" forState:UIControlStateNormal];
+    [send setTitleColor:[UIColor colorWithRed:209/255.0f green:213/255.0f blue:218/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [send.layer setCornerRadius:4.0];
+    [send.layer setBorderWidth:1.0];
+    [send.layer setBorderColor:[UIColor colorWithRed:209/255.0f green:213/255.0f blue:218/255.0f alpha:1.0f].CGColor];
+    
+    [chatView addSubview:send];
+    
+    [self.view addSubview:chatView];
 }
 
 #pragma mark - FCTTableView datasource
@@ -94,6 +135,56 @@
 {
     FCTBubbleData *toPresent = [data objectAtIndex:row];
     return toPresent;
+}
+
+#pragma mark: UITextField delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark: Keyboard notification
+
+- (void)keyboardWillShow:(NSNotification *)aNotification
+{
+    NSDictionary *info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    CGRect aRect = bubbleTableView.frame;
+    aRect.size.height -= kbSize.height;
+    bubbleTableView.frame = aRect;
+    
+    CGRect bRect = chatView.frame;
+    bRect.origin.y -= kbSize.height;
+    chatView.frame = bRect;
+}
+
+- (void)keyboardWillHide:(NSNotification *)aNotification
+{
+    NSDictionary *info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    bubbleTableView.contentInset = contentInsets;
+    bubbleTableView.scrollIndicatorInsets = contentInsets;
+    
+    CGRect aRect = bubbleTableView.frame;
+    aRect.size.height += kbSize.height;
+    aRect.origin.y = 20;
+    bubbleTableView.frame = aRect;
+    
+    CGRect bRect = chatView.frame;
+    bRect.origin.y += kbSize.height;
+    chatView.frame = bRect;
+}
+
+#pragma mark: Actions
+
+- (void)sendMessage:(id)sender
+{
+    
 }
 
 @end
