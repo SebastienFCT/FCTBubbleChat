@@ -42,6 +42,19 @@ You can also provide avatar in your custom table view by setting its `avatarEnab
 - (id)initWithPicture:(UIImage *)picture Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
 - (id)initWithSound:(NSURL *)soundPath Date:(NSDate *)date Type:(FCTBubbleType)type AndAvatar:(UIImage *)avatar;
 ```
+
+Main features
+=============
+* `avatarEnabled` property allow avatar in the FCTTableView (`BOOL`).
+* `avatarStyle` property purpose selecting one of the custom style:
+    - `basicAvatar`
+    - `squarreAvatar`
+    - `circleAvatar`
+    - `bannerAvatar (in building)`
+* `typeDate` property purpose selecting on of the custom style for the timestamp:
+    - `bubbleBasicDate`
+    - `bubbleCustomDate1`
+
 Known issue:
 =============
 - This project is not available for non-ARC project.

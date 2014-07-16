@@ -20,7 +20,7 @@ typedef enum _FCTAvatarType {
     basicAvatar = 0,
     squarreAvatar = 1,
     circleAvatar = 2,
-    banneAvatar = 3
+    bannerAvatar = 3
 } FCTAvatarType;
 
 typedef enum _FCTBubbleDateType {
