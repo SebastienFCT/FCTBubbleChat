@@ -83,7 +83,8 @@
     
     // Custom configuration
     bubbleTableView.avatarEnabled = YES;
-    //bubbleTableView.avatarStyle = circleAvatar;
+    bubbleTableView.avatarStyle = circleAvatar;
+    bubbleTableView.typeDate = bubbleCustomDate1;
     
     [bubbleTableView reloadData];
     

@@ -23,6 +23,11 @@ typedef enum _FCTAvatarType {
     banneAvatar = 3
 } FCTAvatarType;
 
+typedef enum _FCTBubbleDateType {
+    bubbleBasicDate = 0,
+    bubbleCustomDate1 = 1,
+} FCTBubbleDateType;
+
 @interface FCTBubbleData : NSObject
 
 @property (strong) UIView *view;

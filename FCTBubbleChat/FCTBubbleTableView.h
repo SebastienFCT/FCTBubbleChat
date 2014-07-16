@@ -17,5 +17,6 @@
 @property BOOL avatarEnabled;
 @property FCTAvatarType avatarStyle;
 @property SystemSoundID sound;
+@property FCTBubbleDateType typeDate;
 
 @end

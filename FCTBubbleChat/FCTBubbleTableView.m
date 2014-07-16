@@ -21,6 +21,7 @@
 @synthesize avatarEnabled = _avatarEnabled;
 @synthesize avatarStyle = _avatarStyle;
 @synthesize sound = _sound;
+@synthesize typeDate = _typeDate;
 
 #pragma mark - Init
 
@@ -55,6 +56,7 @@
     
     // Default values
     _avatarEnabled = NO;
+    _typeDate = bubbleBasicDate;
 }
 
 #pragma mark - reload data
@@ -122,12 +124,26 @@
         [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
         [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"DST"]]; // 974 on est toujours là
         NSString *stringFromDate = [formatter stringFromDate:date];
-        UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, self.frame.size.width, 20)];
-        dateLabel.text = stringFromDate;
-        dateLabel.textAlignment = NSTextAlignmentCenter;
-        dateLabel.font = [UIFont fontWithName:@"Arial" size:12];
-        
-        [cell addSubview:dateLabel];
+        if (_typeDate == bubbleBasicDate) {
+            UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, self.frame.size.width, 20)];
+            dateLabel.text = stringFromDate;
+            dateLabel.textAlignment = NSTextAlignmentCenter;
+            dateLabel.font = [UIFont fontWithName:@"Arial" size:12];
+            
+            [cell addSubview:dateLabel];
+        } else {
+            UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width / 2 - 80, 10, 160, 20)];
+            dateLabel.text = stringFromDate;
+            dateLabel.textAlignment = NSTextAlignmentCenter;
+            dateLabel.font = [UIFont fontWithName:@"Arial" size:12];
+            [dateLabel.layer setCornerRadius:8.0];
+            [dateLabel.layer setBorderWidth:1.0];
+            [dateLabel.layer setBorderColor:[UIColor colorWithRed:231/255.0f green:231/255.0f blue:231/255.0f alpha:1.0].CGColor];
+            dateLabel.backgroundColor = [UIColor colorWithRed:231/255.0f green:231/255.0f blue:231/255.0f alpha:1.0];
+            dateLabel.layer.masksToBounds = YES;
+            
+            [cell addSubview:dateLabel];
+        }
         
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"cell_type1"];
