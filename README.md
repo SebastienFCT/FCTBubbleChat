@@ -54,6 +54,10 @@ Main features
 * `typeDate` property purpose selecting on of the custom style for the timestamp:
     - `bubbleBasicDate`
     - `bubbleCustomDate1`
+Todo-List
+=============
+* Implement user name under the avatar
+* Implement custom bubble
 
 Known issue:
 =============
