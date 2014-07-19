@@ -58,6 +58,7 @@ Todo-List
 =============
 * Implement user name under the avatar
 * Implement custom bubble
+* Improve sound implementation
 
 Known issue:
 =============
