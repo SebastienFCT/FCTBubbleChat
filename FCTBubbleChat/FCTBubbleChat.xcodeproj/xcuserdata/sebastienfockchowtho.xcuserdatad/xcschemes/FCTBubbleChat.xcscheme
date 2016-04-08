@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D63B7AB1CB80DA9004118F8"
-               BuildableName = "libFCTBubbleChat.a"
+               BlueprintIdentifier = "5D02F2F21CB80F590019B8AB"
+               BuildableName = "FCTBubbleChat.framework"
                BlueprintName = "FCTBubbleChat"
                ReferencedContainer = "container:FCTBubbleChat.xcodeproj">
             </BuildableReference>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5D02F2FC1CB80F5A0019B8AB"
+               BuildableName = "FCTBubbleChatTests.xctest"
+               BlueprintName = "FCTBubbleChatTests"
+               ReferencedContainer = "container:FCTBubbleChat.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5D02F2F21CB80F590019B8AB"
+            BuildableName = "FCTBubbleChat.framework"
+            BlueprintName = "FCTBubbleChat"
+            ReferencedContainer = "container:FCTBubbleChat.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,8 +64,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D63B7AB1CB80DA9004118F8"
-            BuildableName = "libFCTBubbleChat.a"
+            BlueprintIdentifier = "5D02F2F21CB80F590019B8AB"
+            BuildableName = "FCTBubbleChat.framework"
             BlueprintName = "FCTBubbleChat"
             ReferencedContainer = "container:FCTBubbleChat.xcodeproj">
          </BuildableReference>
@@ -63,8 +82,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D63B7AB1CB80DA9004118F8"
-            BuildableName = "libFCTBubbleChat.a"
+            BlueprintIdentifier = "5D02F2F21CB80F590019B8AB"
+            BuildableName = "FCTBubbleChat.framework"
             BlueprintName = "FCTBubbleChat"
             ReferencedContainer = "container:FCTBubbleChat.xcodeproj">
          </BuildableReference>
