@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0720"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D24DE8B1C6D06F5003E599D"
-               BuildableName = "FCTBubbleChat.framework"
+               BlueprintIdentifier = "5D63B7AB1CB80DA9004118F8"
+               BuildableName = "libFCTBubbleChat.a"
                BlueprintName = "FCTBubbleChat"
                ReferencedContainer = "container:FCTBubbleChat.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D24DE8B1C6D06F5003E599D"
-            BuildableName = "FCTBubbleChat.framework"
+            BlueprintIdentifier = "5D63B7AB1CB80DA9004118F8"
+            BuildableName = "libFCTBubbleChat.a"
             BlueprintName = "FCTBubbleChat"
             ReferencedContainer = "container:FCTBubbleChat.xcodeproj">
          </BuildableReference>
@@ -63,8 +63,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D24DE8B1C6D06F5003E599D"
-            BuildableName = "FCTBubbleChat.framework"
+            BlueprintIdentifier = "5D63B7AB1CB80DA9004118F8"
+            BuildableName = "libFCTBubbleChat.a"
             BlueprintName = "FCTBubbleChat"
             ReferencedContainer = "container:FCTBubbleChat.xcodeproj">
          </BuildableReference>
