@@ -13,7 +13,7 @@ enum FCTBubbleDataType: Int {
     case Other
 }
 
-class FCTBubbleData: NSObject {
+public class FCTBubbleData: NSObject {
 
     let type: FCTBubbleDataType = .Mine
     

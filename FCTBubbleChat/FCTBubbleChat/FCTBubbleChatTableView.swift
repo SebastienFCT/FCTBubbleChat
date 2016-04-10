@@ -8,14 +8,33 @@
 
 import UIKit
 
-public class FCTBubbleChatTableView: UITableView {
+public protocol FCTBubbleChatTableViewDataSource: NSObjectProtocol {
+    func numberOfBubbleForBubbleTable(bubbleTable: FCTBubbleChatTableView) -> Int
+    func bubbleTableView(bubbleTableView: FCTBubbleChatTableView, bubbleForRowAtIndex index: Int) -> FCTBubbleData
+}
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
+
+    init() {
+        super.init(frame: CGRectZero, style: .Grouped)
     }
-    */
+    
+    override init(frame: CGRect, style: UITableViewStyle) {
+        super.init(frame: frame, style: style)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) not implemented")
+    }
+    
+    //MARK: - TableView Datasource
+    
+    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return UITableViewCell(frame: CGRectZero)
+    }
 
 }
