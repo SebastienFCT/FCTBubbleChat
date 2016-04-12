@@ -15,6 +15,9 @@ public protocol FCTBubbleChatTableViewDataSource: NSObjectProtocol {
 
 public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
 
+    var bubbleDatasource: FCTBubbleChatTableViewDataSource?
+    var bubbleDataList: Array<FCTBubbleData> = Array()
+    
     init() {
         super.init(frame: CGRectZero, style: .Grouped)
     }
@@ -27,13 +30,29 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         fatalError("init(coder:) not implemented")
     }
     
+    override public func reloadData() {
+        guard let datasource = self.bubbleDatasource, let numberOfRow = self.bubbleDatasource?.numberOfBubbleForBubbleTable(self) else {
+            return
+        }
+        
+        if numberOfRow > 0 {
+            for i in 0..<numberOfRow {
+                bubbleDataList.append(datasource.bubbleTableView(self, bubbleForRowAtIndex: i))
+            }
+        }
+        
+        super.reloadData()
+    }
+    
     //MARK: - TableView Datasource
     
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return bubbleDataList.count
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // let bubbleData: FCTBubbleData = bubbleDataList[indexPath.row]
+        // Draw the cell here
         return UITableViewCell(frame: CGRectZero)
     }
 
