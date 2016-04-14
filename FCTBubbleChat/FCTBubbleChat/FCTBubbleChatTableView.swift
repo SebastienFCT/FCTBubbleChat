@@ -15,7 +15,7 @@ public protocol FCTBubbleChatTableViewDataSource: NSObjectProtocol {
 
 public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
 
-    var bubbleDatasource: FCTBubbleChatTableViewDataSource?
+    public var bubbleDatasource: FCTBubbleChatTableViewDataSource?
     var bubbleDataList: Array<FCTBubbleData> = Array()
     
     init() {

@@ -9,9 +9,11 @@
 import UIKit
 
 @IBDesignable
-class FCTBubbleFrameMine: UIView {
+public class FCTBubbleFrameMine: UIView {
+    
+    @IBInspectable var bubbleColor: UIColor = UIColor.blueColor()
 
-    override func drawRect(rect: CGRect) {
+    override public func drawRect(rect: CGRect) {
         let path = UIBezierPath()
         path.moveToPoint(CGPoint(x: 5, y: 5))
         path.addLineToPoint(CGPoint(x: bounds.width - 5, y: 5))
@@ -22,7 +24,7 @@ class FCTBubbleFrameMine: UIView {
         
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.CGPath
-        shapeLayer.fillColor = UIColor.blueColor().CGColor
+        shapeLayer.fillColor = bubbleColor.CGColor
         
         self.layer.addSublayer(shapeLayer)
     }

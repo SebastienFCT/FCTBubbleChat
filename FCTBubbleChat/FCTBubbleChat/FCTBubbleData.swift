@@ -24,7 +24,7 @@ public class FCTBubbleData: NSObject {
     // Bubble content
     var stringContent: String?
     
-    convenience init(userName: String?, userPic: UIImage?, stringContent: String) {
+    public convenience init(userName: String?, userPic: UIImage?, stringContent: String) {
         self.init()
         
         self.userName = userName
