@@ -12,6 +12,9 @@
 		5D02F3031CB80F5A0019B8AB /* FCTBubbleChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3021CB80F5A0019B8AB /* FCTBubbleChatTests.swift */; };
 		5D02F3131CB811570019B8AB /* FCTBubbleChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */; };
 		5D02F3151CB813660019B8AB /* FCTBubbleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3141CB813660019B8AB /* FCTBubbleData.swift */; };
+		5D3F48421CBF548100184025 /* FCTBubbleChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3F48411CBF548100184025 /* FCTBubbleChatTableViewCell.swift */; };
+		5D3F48481CBF569000184025 /* FCTBubbleFrameMine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3F48471CBF569000184025 /* FCTBubbleFrameMine.xib */; };
+		5D3F484A1CBF56A000184025 /* FCTBubbleFrameMine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3F48491CBF56A000184025 /* FCTBubbleFrameMine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,9 @@
 		5D02F3041CB80F5A0019B8AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleChatTableView.swift; sourceTree = "<group>"; };
 		5D02F3141CB813660019B8AB /* FCTBubbleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleData.swift; sourceTree = "<group>"; };
+		5D3F48411CBF548100184025 /* FCTBubbleChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleChatTableViewCell.swift; sourceTree = "<group>"; };
+		5D3F48471CBF569000184025 /* FCTBubbleFrameMine.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTBubbleFrameMine.xib; sourceTree = "<group>"; };
+		5D3F48491CBF56A000184025 /* FCTBubbleFrameMine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleFrameMine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 		5D02F2F51CB80F590019B8AB /* FCTBubbleChat */ = {
 			isa = PBXGroup;
 			children = (
+				5D02F3141CB813660019B8AB /* FCTBubbleData.swift */,
 				5D02F30D1CB80F770019B8AB /* FCTBubbleTableView */,
 				5D02F2F61CB80F590019B8AB /* FCTBubbleChat.h */,
 				5D02F2F81CB80F590019B8AB /* Info.plist */,
@@ -94,10 +101,20 @@
 		5D02F30D1CB80F770019B8AB /* FCTBubbleTableView */ = {
 			isa = PBXGroup;
 			children = (
+				5D3F484B1CBF56A500184025 /* Frame */,
 				5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */,
-				5D02F3141CB813660019B8AB /* FCTBubbleData.swift */,
+				5D3F48411CBF548100184025 /* FCTBubbleChatTableViewCell.swift */,
 			);
 			name = FCTBubbleTableView;
+			sourceTree = "<group>";
+		};
+		5D3F484B1CBF56A500184025 /* Frame */ = {
+			isa = PBXGroup;
+			children = (
+				5D3F48471CBF569000184025 /* FCTBubbleFrameMine.xib */,
+				5D3F48491CBF56A000184025 /* FCTBubbleFrameMine.swift */,
+			);
+			name = Frame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D3F48481CBF569000184025 /* FCTBubbleFrameMine.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D3F484A1CBF56A000184025 /* FCTBubbleFrameMine.swift in Sources */,
 				5D02F3131CB811570019B8AB /* FCTBubbleChatTableView.swift in Sources */,
+				5D3F48421CBF548100184025 /* FCTBubbleChatTableViewCell.swift in Sources */,
 				5D02F3151CB813660019B8AB /* FCTBubbleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +417,7 @@
 				5D02F3091CB80F5A0019B8AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D02F30A1CB80F5A0019B8AB /* Build configuration list for PBXNativeTarget "FCTBubbleChatTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +426,7 @@
 				5D02F30C1CB80F5A0019B8AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
