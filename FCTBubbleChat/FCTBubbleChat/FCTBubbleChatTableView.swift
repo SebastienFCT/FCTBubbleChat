@@ -88,10 +88,8 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         }
         
         text = data.stringContent!
-        
-        let font = UIFont(name: "HiraKakuProN-W3", size: 20.0)
     
-        return 80.0 + text.heightWithConstrainedWidth(self.frame.width - 80, font: UIFont(name: "HiraKakuProN-W3", size: 20.0)!)
+        return 80 + text.heightWithConstrainedWidth(self.frame.width - 60, font: UIFont(name: "HiraKakuProN-W3", size: 20.0)!)
     }
 
 }
