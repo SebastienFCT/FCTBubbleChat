@@ -102,8 +102,8 @@
 		5D02F2F51CB80F590019B8AB /* FCTBubbleChat */ = {
 			isa = PBXGroup;
 			children = (
+				5D6315621CC15BBB0050470D /* Model */,
 				5DEC06431CC0A0FE00F6C2C2 /* Helpers */,
-				5D02F3141CB813660019B8AB /* FCTBubbleData.swift */,
 				5D02F30D1CB80F770019B8AB /* FCTBubbleTableView */,
 				5D02F2F61CB80F590019B8AB /* FCTBubbleChat.h */,
 				5D02F2F81CB80F590019B8AB /* Info.plist */,
@@ -136,6 +136,14 @@
 				5D6315601CC14FD30050470D /* FCTBubbleFrame.swift */,
 			);
 			name = FCTBubbleFrame;
+			sourceTree = "<group>";
+		};
+		5D6315621CC15BBB0050470D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D02F3141CB813660019B8AB /* FCTBubbleData.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		5DEC06271CC03F7500F6C2C2 /* Products */ = {
