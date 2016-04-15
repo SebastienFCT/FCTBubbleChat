@@ -30,12 +30,13 @@ public class FCTBubbleFrameMine: UIView {
         
         self.layer.addSublayer(shapeLayer)
         
-        let labelLayer = CATextLayer()
-        labelLayer.frame = CGRect(x: 40, y: 20, width: bounds.width - 80, height: bounds.height - 40)
-        labelLayer.string = text
-        labelLayer.fontSize = 20.0
-        labelLayer.foregroundColor = UIColor.blackColor().CGColor
-
-        self.layer.addSublayer(labelLayer)
+        let label = UILabel(frame: CGRect(x: 40, y: 20, width: bounds.width - 80, height: bounds.height - 40))
+        label.text = text
+        label.numberOfLines = 0
+        label.font = UIFont(name: "HiraKakuProN-W3", size: 20.0)
+        label.textColor = UIColor.blueColor()
+        label.backgroundColor = UIColor.clearColor()
+        
+        self.addSubview(label)
     }
 }

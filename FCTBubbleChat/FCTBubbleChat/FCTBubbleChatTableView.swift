@@ -16,7 +16,7 @@ public protocol FCTBubbleChatTableViewDataSource: NSObjectProtocol {
 public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
 
     public var bubbleDatasource: FCTBubbleChatTableViewDataSource?
-    var bubbleDataList: Array<FCTBubbleData> = Array()
+    var bubbleDataList: Array<FCTBubbleData?> = Array()
     let reusableCellID: String = "fctBubbleCell"
     
     init() {
@@ -68,14 +68,30 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
             let cell = FCTBubbleTableViewCell()
         }
         
-        let data = bubbleDataList[indexPath.row]
-        cell?.bubbleFrame.text = "Hello swift programmer!"
+        guard let data = bubbleDataList[indexPath.row] else {
+            cell?.bubbleFrame.text = "Hello Swift Developer, your data has no stringContent here..."
+            return cell!
+        }
+        
+        cell?.bubbleFrame.text = data.stringContent!
 
         return cell!
     }
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        
+        var text = ""
+        
+        guard let data = bubbleDataList[indexPath.row] else {
+            text = "Hello Swift Developer, your data has no stringContent here..."
+            return 20.0
+        }
+        
+        text = data.stringContent!
+        
+        let font = UIFont(name: "HiraKakuProN-W3", size: 20.0)
+    
+        return 80.0 + text.heightWithConstrainedWidth(self.frame.width - 80, font: UIFont(name: "HiraKakuProN-W3", size: 20.0)!)
     }
 
 }

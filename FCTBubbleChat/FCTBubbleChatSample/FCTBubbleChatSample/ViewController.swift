@@ -38,7 +38,7 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
     }
     
     func bubbleTableView(bubbleTableView: FCTBubbleChatTableView, bubbleForRowAtIndex index: Int) -> FCTBubbleData {
-        let data = FCTBubbleData(userName: "sebfct", userPic: nil, stringContent: "hello swift world")
+        let data = FCTBubbleData(userName: "sebfct", userPic: nil, stringContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
         
         return data
     }
