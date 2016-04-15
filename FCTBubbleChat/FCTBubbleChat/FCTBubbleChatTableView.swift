@@ -17,17 +17,27 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
 
     public var bubbleDatasource: FCTBubbleChatTableViewDataSource?
     var bubbleDataList: Array<FCTBubbleData> = Array()
+    let reusableCellID: String = "fctBubbleCell"
     
     init() {
-        super.init(frame: CGRectZero, style: .Grouped)
+        super.init(frame: CGRectZero, style: .Plain)
+        initValue()
     }
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
+        initValue()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) not implemented")
+    }
+    
+    func initValue() {
+        self.delegate = self
+        self.dataSource = self
+        
+        self.registerNib(UINib(nibName: "FCTBubbleTableViewCell", bundle: NSBundle.init(identifier: "sfct.FCTBubbleChat")), forCellReuseIdentifier: reusableCellID)
     }
     
     override public func reloadData() {
@@ -51,9 +61,21 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // let bubbleData: FCTBubbleData = bubbleDataList[indexPath.row]
-        // Draw the cell here
-        return UITableViewCell(frame: CGRectZero)
+        let cell = tableView.dequeueReusableCellWithIdentifier(reusableCellID) as! FCTBubbleTableViewCell?
+        
+        if (cell == nil) {
+            tableView.registerNib(UINib(nibName: "FCTBubbleTableViewCell", bundle: NSBundle.init(identifier: "sfct.FCTBubbleChat")), forCellReuseIdentifier: reusableCellID)
+            let cell = FCTBubbleTableViewCell()
+        }
+        
+        let data = bubbleDataList[indexPath.row]
+        cell?.bubbleFrame.text = "Hello swift programmer!"
+
+        return cell!
+    }
+    
+    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
     }
 
 }

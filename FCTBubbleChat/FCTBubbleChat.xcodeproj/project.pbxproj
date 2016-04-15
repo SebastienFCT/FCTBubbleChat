@@ -12,13 +12,13 @@
 		5D02F3031CB80F5A0019B8AB /* FCTBubbleChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3021CB80F5A0019B8AB /* FCTBubbleChatTests.swift */; };
 		5D02F3131CB811570019B8AB /* FCTBubbleChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */; };
 		5D02F3151CB813660019B8AB /* FCTBubbleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3141CB813660019B8AB /* FCTBubbleData.swift */; };
-		5D3F48421CBF548100184025 /* FCTBubbleChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3F48411CBF548100184025 /* FCTBubbleChatTableViewCell.swift */; };
-		5D3F48481CBF569000184025 /* FCTBubbleFrameMine.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D3F48471CBF569000184025 /* FCTBubbleFrameMine.xib */; };
 		5D3F484A1CBF56A000184025 /* FCTBubbleFrameMine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3F48491CBF56A000184025 /* FCTBubbleFrameMine.swift */; };
 		5DEC06311CC0421E00F6C2C2 /* FCTBubbleChatTableView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		5DEC06321CC0422100F6C2C2 /* FCTBubbleChatTableViewCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5D3F48411CBF548100184025 /* FCTBubbleChatTableViewCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DEC06331CC0422800F6C2C2 /* FCTBubbleFrameMine.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5D3F48491CBF56A000184025 /* FCTBubbleFrameMine.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DEC06341CC042D800F6C2C2 /* FCTBubbleData.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5D02F3141CB813660019B8AB /* FCTBubbleData.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DEC063A1CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC06381CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift */; };
+		5DEC063F1CC0749900F6C2C2 /* FCTBubbleTableViewCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5DEC06381CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DEC06401CC0771800F6C2C2 /* FCTBubbleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DEC06391CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,10 +54,10 @@
 		5D02F3041CB80F5A0019B8AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleChatTableView.swift; sourceTree = "<group>"; };
 		5D02F3141CB813660019B8AB /* FCTBubbleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleData.swift; sourceTree = "<group>"; };
-		5D3F48411CBF548100184025 /* FCTBubbleChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleChatTableViewCell.swift; sourceTree = "<group>"; };
-		5D3F48471CBF569000184025 /* FCTBubbleFrameMine.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTBubbleFrameMine.xib; sourceTree = "<group>"; };
 		5D3F48491CBF56A000184025 /* FCTBubbleFrameMine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleFrameMine.swift; sourceTree = "<group>"; };
 		5DEC06261CC03F7500F6C2C2 /* FCTBubbleChatSample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FCTBubbleChatSample.xcodeproj; path = FCTBubbleChatSample/FCTBubbleChatSample.xcodeproj; sourceTree = "<group>"; };
+		5DEC06381CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleTableViewCell.swift; sourceTree = "<group>"; };
+		5DEC06391CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTBubbleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,20 +121,19 @@
 		5D02F30D1CB80F770019B8AB /* FCTBubbleTableView */ = {
 			isa = PBXGroup;
 			children = (
-				5D3F484B1CBF56A500184025 /* Frame */,
+				5DEC06371CC06E4700F6C2C2 /* FCTBubbleCell */,
+				5D3F484B1CBF56A500184025 /* FCTBubbleFrame */,
 				5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */,
-				5D3F48411CBF548100184025 /* FCTBubbleChatTableViewCell.swift */,
 			);
 			name = FCTBubbleTableView;
 			sourceTree = "<group>";
 		};
-		5D3F484B1CBF56A500184025 /* Frame */ = {
+		5D3F484B1CBF56A500184025 /* FCTBubbleFrame */ = {
 			isa = PBXGroup;
 			children = (
-				5D3F48471CBF569000184025 /* FCTBubbleFrameMine.xib */,
 				5D3F48491CBF56A000184025 /* FCTBubbleFrameMine.swift */,
 			);
-			name = Frame;
+			name = FCTBubbleFrame;
 			sourceTree = "<group>";
 		};
 		5DEC06271CC03F7500F6C2C2 /* Products */ = {
@@ -146,6 +145,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5DEC06371CC06E4700F6C2C2 /* FCTBubbleCell */ = {
+			isa = PBXGroup;
+			children = (
+				5DEC06381CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift */,
+				5DEC06391CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.xib */,
+			);
+			name = FCTBubbleCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -155,9 +163,9 @@
 			files = (
 				5D02F2F71CB80F590019B8AB /* FCTBubbleChat.h in Headers */,
 				5DEC06311CC0421E00F6C2C2 /* FCTBubbleChatTableView.swift in Headers */,
+				5DEC063F1CC0749900F6C2C2 /* FCTBubbleTableViewCell.swift in Headers */,
 				5DEC06331CC0422800F6C2C2 /* FCTBubbleFrameMine.swift in Headers */,
 				5DEC06341CC042D800F6C2C2 /* FCTBubbleData.swift in Headers */,
-				5DEC06321CC0422100F6C2C2 /* FCTBubbleChatTableViewCell.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D3F48481CBF569000184025 /* FCTBubbleFrameMine.xib in Resources */,
+				5DEC06401CC0771800F6C2C2 /* FCTBubbleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +291,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D3F484A1CBF56A000184025 /* FCTBubbleFrameMine.swift in Sources */,
+				5DEC063A1CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift in Sources */,
 				5D02F3131CB811570019B8AB /* FCTBubbleChatTableView.swift in Sources */,
-				5D3F48421CBF548100184025 /* FCTBubbleChatTableViewCell.swift in Sources */,
 				5D02F3151CB813660019B8AB /* FCTBubbleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

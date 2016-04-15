@@ -17,10 +17,13 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: UIScreen.mainScreen().bounds.size.height))
+        let bounds: CGRect = UIScreen.mainScreen().bounds
+        
+        bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 40, width: bounds.width, height: UIScreen.mainScreen().bounds.size.height))
         bubbleTableSample.bubbleDatasource = self
         
         self.view.addSubview(bubbleTableSample)
+        bubbleTableSample.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +34,7 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
     //MARK: FCTBubbleChat
     
     func numberOfBubbleForBubbleTable(bubbleTable: FCTBubbleChatTableView) -> Int {
-        return 10
+        return 3
     }
     
     func bubbleTableView(bubbleTableView: FCTBubbleChatTableView, bubbleForRowAtIndex index: Int) -> FCTBubbleData {

@@ -11,9 +11,11 @@ import UIKit
 @IBDesignable
 public class FCTBubbleFrameMine: UIView {
     
-    @IBInspectable var bubbleColor: UIColor = UIColor.blueColor()
+    @IBInspectable var bubbleColor: UIColor = UIColor(red: 0/155.0, green: 166/155.0, blue: 186/155.0, alpha: 1.0)
+    @IBInspectable public var text: String = "hello world!"
 
-    override public func drawRect(rect: CGRect) {
+    override public func layoutSubviews() {
+        super.layoutSubviews()
         let path = UIBezierPath()
         path.moveToPoint(CGPoint(x: 5, y: 5))
         path.addLineToPoint(CGPoint(x: bounds.width - 5, y: 5))
@@ -27,6 +29,13 @@ public class FCTBubbleFrameMine: UIView {
         shapeLayer.fillColor = bubbleColor.CGColor
         
         self.layer.addSublayer(shapeLayer)
-    }
+        
+        let labelLayer = CATextLayer()
+        labelLayer.frame = CGRect(x: 40, y: 20, width: bounds.width - 80, height: bounds.height - 40)
+        labelLayer.string = text
+        labelLayer.fontSize = 20.0
+        labelLayer.foregroundColor = UIColor.blackColor().CGColor
 
+        self.layer.addSublayer(labelLayer)
+    }
 }
