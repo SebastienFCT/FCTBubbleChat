@@ -22,6 +22,7 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         let bounds: CGRect = UIScreen.mainScreen().bounds
         
         bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 40, width: bounds.width, height: UIScreen.mainScreen().bounds.size.height))
+        bubbleTableSample.avatarMode = true
         bubbleTableSample.bubbleDatasource = self
         
         self.view.addSubview(bubbleTableSample)

@@ -16,6 +16,7 @@ public protocol FCTBubbleChatTableViewDataSource: NSObjectProtocol {
 public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
 
     public var bubbleDatasource: FCTBubbleChatTableViewDataSource?
+    public var avatarMode: Bool = false
     var bubbleDataList: Array<FCTBubbleData?> = Array()
     let reusableCellID: String = "fctBubbleCell"
     
@@ -75,6 +76,7 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         
         cell?.bubbleFrame.text = data.stringContent!
         cell?.bubbleFrame.bubbleType = data.type
+        cell?.bubbleFrame.picMode = avatarMode
 
         return cell!
     }
@@ -90,7 +92,11 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         
         text = data.stringContent!
     
-        return 80 + text.heightWithConstrainedWidth(self.frame.width - 60, font: UIFont(name: "HiraKakuProN-W3", size: 20.0)!)
+        if avatarMode {
+            return 120 + text.heightWithConstrainedWidth(self.frame.width - 60, font: UIFont(name: "HiraKakuProN-W3", size: 20.0)!)
+        } else {
+            return 80 + text.heightWithConstrainedWidth(self.frame.width - 60, font: UIFont(name: "HiraKakuProN-W3", size: 20.0)!)
+        }
     }
 
 }

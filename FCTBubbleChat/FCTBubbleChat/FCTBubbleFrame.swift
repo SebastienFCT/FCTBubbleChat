@@ -13,7 +13,7 @@ public class FCTBubbleFrame: UIView {
     
     @IBInspectable var bubbleColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
     @IBInspectable public var text: String = "hello world!"
-    @IBInspectable public var picMode: Bool = true
+    @IBInspectable public var picMode: Bool = false
     public var bubbleType: FCTBubbleDataType = .Other
     public var avatarPic: UIImage?
     public var username: String?
@@ -82,7 +82,7 @@ public class FCTBubbleFrame: UIView {
                 
                 self.addSubview(avatar)
                 
-                let usernameLabel = UILabel(frame: CGRect(x: 5, y: 40, width: bounds.width - 75, height: 25))
+                let usernameLabel = UILabel(frame: CGRect(x: 5, y: 40, width: bounds.width - 85, height: 25))
                 usernameLabel.text = "Username"
                 usernameLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
                 usernameLabel.textAlignment = .Right
