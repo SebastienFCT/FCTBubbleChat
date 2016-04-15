@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="563" height="418.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CK9-Ka-Qsb" customClass="FCTBubbleFrameMine" customModule="FCTBubbleChat">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CK9-Ka-Qsb" customClass="FCTBubbleFrame" customModule="FCTBubbleChat">
                         <rect key="frame" x="0.0" y="0.0" width="563" height="418.5"/>
                     </view>
                 </subviews>
