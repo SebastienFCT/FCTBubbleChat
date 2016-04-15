@@ -19,6 +19,7 @@ public class FCTBubbleFrame: UIView {
         super.layoutSubviews()
         
         let path = UIBezierPath()
+        
         let shapeLayer = CAShapeLayer()
         
         let label: UILabel = UILabel()
@@ -55,6 +56,15 @@ public class FCTBubbleFrame: UIView {
         label.backgroundColor = UIColor.clearColor()
         
         shapeLayer.path = path.CGPath
+        
+        let shadowPath: UIBezierPath = UIBezierPath(rect: self.bounds)
+        self.layer.masksToBounds = false;
+        self.layer.shadowColor = UIColor.blackColor().CGColor;
+        self.layer.shadowOffset = CGSizeMake(5.0, 5.0);
+        self.layer.shadowOpacity = 0.5;
+        
+        shapeLayer.shadowPath = shadowPath.CGPath
+        
         shapeLayer.fillColor = bubbleColor.CGColor
         
         self.layer.addSublayer(shapeLayer)
