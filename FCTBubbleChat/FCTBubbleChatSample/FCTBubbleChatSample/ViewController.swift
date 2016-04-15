@@ -12,10 +12,12 @@ import FCTBubbleChat
 class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
     
     var bubbleTableSample: FCTBubbleChatTableView!
+    var dataArray: Array = [FCTBubbleData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.generateData()
         
         let bounds: CGRect = UIScreen.mainScreen().bounds
         
@@ -38,9 +40,20 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
     }
     
     func bubbleTableView(bubbleTableView: FCTBubbleChatTableView, bubbleForRowAtIndex index: Int) -> FCTBubbleData {
-        let data = FCTBubbleData(userName: "sebfct", userPic: nil, stringContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        let data = dataArray[index]
         
         return data
+    }
+    
+    //MARK: Helpers
+    
+    func generateData() {
+        let data1 = FCTBubbleData(userName: "sebfct", userPic: nil, stringContent: "Hi there, is this the new FCTBubbleChat?", type: .Mine)
+        dataArray.append(data1)
+        let data2 = FCTBubbleData(userName: "fctchat bot", userPic: nil, stringContent: "Yep, welcome to the underground fellow", type: .Other)
+        dataArray.append(data2)
+        let data3 = FCTBubbleData(userName: "sebfct", userPic: nil, stringContent: "Sounds great! Tell me more about its features", type: .Mine)
+        dataArray.append(data3)
     }
 
 }

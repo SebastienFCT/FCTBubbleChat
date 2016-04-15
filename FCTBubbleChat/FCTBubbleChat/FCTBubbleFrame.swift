@@ -8,17 +8,12 @@
 
 import UIKit
 
-public enum BubbleType {
-    case Mine
-    case Other
-}
-
 @IBDesignable
 public class FCTBubbleFrame: UIView {
     
     @IBInspectable var bubbleColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
     @IBInspectable public var text: String = "hello world!"
-    public var bubbleType: BubbleType = .Mine
+    public var bubbleType: FCTBubbleDataType = .Mine
     
     override public func layoutSubviews() {
         super.layoutSubviews()

@@ -74,6 +74,8 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         }
         
         cell?.bubbleFrame.text = data.stringContent!
+        cell?.bubbleFrame.bubbleType = data.type
+        NSLog("type: \(data.type)")
 
         return cell!
     }

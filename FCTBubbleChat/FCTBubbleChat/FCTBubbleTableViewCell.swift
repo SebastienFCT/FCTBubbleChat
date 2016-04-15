@@ -10,7 +10,7 @@ import UIKit
 
 public class FCTBubbleTableViewCell: UITableViewCell {
     
-    @IBOutlet var bubbleFrame: FCTBubbleFrameMine!
+    @IBOutlet var bubbleFrame: FCTBubbleFrame!
     
     public override func awakeFromNib() {
         super.awakeFromNib()

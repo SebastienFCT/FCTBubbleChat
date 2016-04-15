@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum FCTBubbleDataType: Int {
+public enum FCTBubbleDataType: Int {
     case Mine
     case Other
 }
 
 public class FCTBubbleData: NSObject {
 
-    let type: FCTBubbleDataType = .Mine
+    var type: FCTBubbleDataType = .Mine
     
     // Bubble infos
     var userName: String?
@@ -24,11 +24,12 @@ public class FCTBubbleData: NSObject {
     // Bubble content
     var stringContent: String?
     
-    public convenience init(userName: String?, userPic: UIImage?, stringContent: String) {
+    public convenience init(userName: String?, userPic: UIImage?, stringContent: String, type: FCTBubbleDataType) {
         self.init()
         
         self.userName = userName
         self.userPic = userPic
+        self.type = type
         
         self.stringContent = stringContent
     }
