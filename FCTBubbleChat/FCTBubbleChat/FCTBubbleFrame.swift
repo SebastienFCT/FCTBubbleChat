@@ -11,12 +11,14 @@ import UIKit
 @IBDesignable
 public class FCTBubbleFrame: UIView {
     
-    @IBInspectable var bubbleColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
-    @IBInspectable public var text: String = "hello world!"
-    @IBInspectable public var picMode: Bool = false
+    var bubbleColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
+    public var text: String = "hello world!"
+    
+    // Custom
+    public var picMode: Bool = true
     public var bubbleType: FCTBubbleDataType = .Other
     public var avatarPic: UIImage?
-    public var username: String?
+    public var username: String = "Username"
     
     override public func layoutSubviews() {
         super.layoutSubviews()
@@ -26,6 +28,7 @@ public class FCTBubbleFrame: UIView {
         let shapeLayer = CAShapeLayer()
         
         let label: UILabel = UILabel()
+        let usernameLabel: UILabel = UILabel()
         
         switch bubbleType {
         case .Mine:
@@ -40,23 +43,21 @@ public class FCTBubbleFrame: UIView {
                 
                 self.addSubview(avatar)
                 
-                let usernameLabel = UILabel(frame: CGRect(x: 80, y: 40, width: bounds.width - 90, height: 25))
-                usernameLabel.text = "Username"
+                usernameLabel.frame = CGRect(x: 80, y: 5, width: bounds.width - 90, height: 25)
                 usernameLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
                 
                 self.addSubview(usernameLabel)
                 
-                path.moveToPoint(CGPoint(x: 5, y: 75))
-                path.addLineToPoint(CGPoint(x: bounds.width - 50, y: 75))
-                path.addLineToPoint(CGPoint(x: bounds.width - 50, y: bounds.height - 5))
-                path.addLineToPoint(CGPoint(x: 25, y: bounds.height - 5))
-                path.addLineToPoint(CGPoint(x: 25, y: 95))
-                path.addLineToPoint(CGPoint(x: 5, y: 75))
+                path.moveToPoint(CGPoint(x: 80, y: 35))
+                path.addLineToPoint(CGPoint(x: bounds.width - 5, y: 35))
+                path.addLineToPoint(CGPoint(x: bounds.width - 5, y: bounds.height - 5))
+                path.addLineToPoint(CGPoint(x: 100, y: bounds.height - 5))
+                path.addLineToPoint(CGPoint(x: 100, y: 55))
+                path.addLineToPoint(CGPoint(x: 80, y: 35))
                 
-                label.frame = CGRect(x: 40, y: 90, width: bounds.width - 105, height: bounds.height - 110)
+                label.frame = CGRect(x: 115, y: 50, width: bounds.width - 135, height: bounds.height - 70)
             } else {
-                let usernameLabel = UILabel(frame: CGRect(x: 5, y: 5, width: bounds.width - 10, height: 25))
-                usernameLabel.text = "Username"
+                usernameLabel.frame = CGRect(x: 5, y: 5, width: bounds.width - 10, height: 25)
                 usernameLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
                 
                 self.addSubview(usernameLabel)
@@ -82,24 +83,22 @@ public class FCTBubbleFrame: UIView {
                 
                 self.addSubview(avatar)
                 
-                let usernameLabel = UILabel(frame: CGRect(x: 5, y: 40, width: bounds.width - 85, height: 25))
-                usernameLabel.text = "Username"
+                usernameLabel.frame = CGRect(x: 5, y: 5, width: bounds.width - 85, height: 25)
                 usernameLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
                 usernameLabel.textAlignment = .Right
                 
                 self.addSubview(usernameLabel)
                 
-                path.moveToPoint(CGPoint(x: bounds.width - 5, y: 75))
-                path.addLineToPoint(CGPoint(x: bounds.width - 25, y: 95))
-                path.addLineToPoint(CGPoint(x: bounds.width - 25, y: bounds.height - 5))
-                path.addLineToPoint(CGPoint(x: 50, y: bounds.height - 5))
-                path.addLineToPoint(CGPoint(x: 50, y: 75))
-                path.addLineToPoint(CGPoint(x: bounds.width - 5, y: 75))
+                path.moveToPoint(CGPoint(x: bounds.width - 75, y: 35))
+                path.addLineToPoint(CGPoint(x: bounds.width - 95, y: 55))
+                path.addLineToPoint(CGPoint(x: bounds.width - 95, y: bounds.height - 5))
+                path.addLineToPoint(CGPoint(x: 5, y: bounds.height - 5))
+                path.addLineToPoint(CGPoint(x: 5, y: 35))
+                path.addLineToPoint(CGPoint(x: bounds.width - 75, y: 35))
                 
-                label.frame = CGRect(x: 65, y: 90, width: bounds.width - 105, height: bounds.height - 110)
+                label.frame = CGRect(x: 20, y: 50, width: bounds.width - 130, height: bounds.height - 70)
             } else {
-                let usernameLabel = UILabel(frame: CGRect(x: 5, y: 5, width: bounds.width - 10, height: 25))
-                usernameLabel.text = "Username"
+                usernameLabel.frame = CGRect(x: 5, y: 5, width: bounds.width - 10, height: 25)
                 usernameLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
                 usernameLabel.textAlignment = .Right
                 
@@ -116,6 +115,8 @@ public class FCTBubbleFrame: UIView {
             }
         }
         
+        usernameLabel.text = username
+        
         label.text = text
         label.numberOfLines = 0
         label.font = UIFont(name: "HiraKakuProN-W3", size: 20.0)
@@ -127,8 +128,8 @@ public class FCTBubbleFrame: UIView {
         let shadowPath: UIBezierPath = UIBezierPath(rect: self.bounds)
         self.layer.masksToBounds = false;
         self.layer.shadowColor = UIColor.blackColor().CGColor;
-        self.layer.shadowOffset = CGSizeMake(2.5, -2.5);
-        self.layer.shadowOpacity = 0.5;
+        self.layer.shadowOffset = CGSizeMake(0.5, 0.5);
+        self.layer.shadowOpacity = 0.3;
         
         shapeLayer.shadowPath = shadowPath.CGPath
         

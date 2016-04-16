@@ -77,6 +77,8 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         cell?.bubbleFrame.text = data.stringContent!
         cell?.bubbleFrame.bubbleType = data.type
         cell?.bubbleFrame.picMode = avatarMode
+        cell?.bubbleFrame.username = data.userName!
+        
 
         return cell!
     }
