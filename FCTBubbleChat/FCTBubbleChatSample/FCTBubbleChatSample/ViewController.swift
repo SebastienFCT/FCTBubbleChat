@@ -21,7 +21,7 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         
         let bounds: CGRect = UIScreen.mainScreen().bounds
         
-        bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 40, width: bounds.width, height: UIScreen.mainScreen().bounds.size.height))
+        bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: UIScreen.mainScreen().bounds.size.height))
         bubbleTableSample.avatarMode = true
         bubbleTableSample.bubbleDatasource = self
         
@@ -49,12 +49,16 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
     //MARK: Helpers
     
     func generateData() {
-        let data1 = FCTBubbleData(userName: "sebfct", userPic: nil, stringContent: "Hi there, is this the new FCTBubbleChat?", type: .Mine)
+        let data1 = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), stringContent: "Hi there, is this the new FCTBubbleChat?", type: .Mine)
         dataArray.append(data1)
-        let data2 = FCTBubbleData(userName: "fctchat bot", userPic: nil, stringContent: "Yep, welcome to the underground fellow", type: .Other)
+        let data2 = FCTBubbleData(userName: "FCTChat Bot", userPic: UIImage(named:"FCTBot"), stringContent: "Yep, welcome to the underground fellow", type: .Other)
         dataArray.append(data2)
-        let data3 = FCTBubbleData(userName: "sebfct", userPic: nil, stringContent: "Sounds great! Tell me more about its features", type: .Mine)
+        let data3 = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), stringContent: "Sounds great! Tell me more about its features", type: .Mine)
         dataArray.append(data3)
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 
 }

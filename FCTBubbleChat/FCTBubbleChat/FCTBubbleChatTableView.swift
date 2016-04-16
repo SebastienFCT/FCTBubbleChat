@@ -38,6 +38,8 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         self.delegate = self
         self.dataSource = self
         
+        self.separatorStyle = .None
+        
         self.registerNib(UINib(nibName: "FCTBubbleTableViewCell", bundle: NSBundle.init(identifier: "sfct.FCTBubbleChat")), forCellReuseIdentifier: reusableCellID)
     }
     
@@ -79,6 +81,11 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         cell?.bubbleFrame.picMode = avatarMode
         cell?.bubbleFrame.username = data.userName!
         
+        guard let pic = data.userPic else {
+            return cell!
+        }
+        
+        cell?.bubbleFrame.avatarPic = pic
 
         return cell!
     }

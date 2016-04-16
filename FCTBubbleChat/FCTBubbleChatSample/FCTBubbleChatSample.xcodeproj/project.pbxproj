@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DC5BE941CC2AE8A00C3FE21 /* sebfct_avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5BE931CC2AE8A00C3FE21 /* sebfct_avatar.jpg */; };
+		5DC5BE991CC2BA9F00C3FE21 /* FCTBot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5BE951CC2BA9F00C3FE21 /* FCTBot.png */; };
+		5DC5BE9A1CC2BA9F00C3FE21 /* FCTBot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5BE961CC2BA9F00C3FE21 /* FCTBot@2x.png */; };
+		5DC5BE9B1CC2BA9F00C3FE21 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5BE971CC2BA9F00C3FE21 /* logo.png */; };
+		5DC5BE9C1CC2BA9F00C3FE21 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5BE981CC2BA9F00C3FE21 /* logo@2x.png */; };
 		5DEC06041CC03F7500F6C2C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC06031CC03F7500F6C2C2 /* AppDelegate.swift */; };
 		5DEC06061CC03F7500F6C2C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC06051CC03F7500F6C2C2 /* ViewController.swift */; };
 		5DEC06091CC03F7500F6C2C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DEC06071CC03F7500F6C2C2 /* Main.storyboard */; };
@@ -28,6 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5DC5BE931CC2AE8A00C3FE21 /* sebfct_avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sebfct_avatar.jpg; sourceTree = "<group>"; };
+		5DC5BE951CC2BA9F00C3FE21 /* FCTBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FCTBot.png; sourceTree = "<group>"; };
+		5DC5BE961CC2BA9F00C3FE21 /* FCTBot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FCTBot@2x.png"; sourceTree = "<group>"; };
+		5DC5BE971CC2BA9F00C3FE21 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		5DC5BE981CC2BA9F00C3FE21 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		5DEC06001CC03F7500F6C2C2 /* FCTBubbleChatSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCTBubbleChatSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DEC06031CC03F7500F6C2C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DEC06051CC03F7500F6C2C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +71,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DC5BE901CC2AE0000C3FE21 /* Sample ressources */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5BE951CC2BA9F00C3FE21 /* FCTBot.png */,
+				5DC5BE961CC2BA9F00C3FE21 /* FCTBot@2x.png */,
+				5DC5BE971CC2BA9F00C3FE21 /* logo.png */,
+				5DC5BE981CC2BA9F00C3FE21 /* logo@2x.png */,
+				5DC5BE931CC2AE8A00C3FE21 /* sebfct_avatar.jpg */,
+			);
+			name = "Sample ressources";
+			sourceTree = "<group>";
+		};
 		5DEC05F71CC03F7500F6C2C2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +105,7 @@
 		5DEC06021CC03F7500F6C2C2 /* FCTBubbleChatSample */ = {
 			isa = PBXGroup;
 			children = (
+				5DC5BE901CC2AE0000C3FE21 /* Sample ressources */,
 				5DEC06031CC03F7500F6C2C2 /* AppDelegate.swift */,
 				5DEC06051CC03F7500F6C2C2 /* ViewController.swift */,
 				5DEC06071CC03F7500F6C2C2 /* Main.storyboard */,
@@ -184,9 +207,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC5BE9A1CC2BA9F00C3FE21 /* FCTBot@2x.png in Resources */,
+				5DC5BE9C1CC2BA9F00C3FE21 /* logo@2x.png in Resources */,
 				5DEC06111CC03F7500F6C2C2 /* LaunchScreen.storyboard in Resources */,
+				5DC5BE941CC2AE8A00C3FE21 /* sebfct_avatar.jpg in Resources */,
 				5DEC060E1CC03F7500F6C2C2 /* Assets.xcassets in Resources */,
+				5DC5BE9B1CC2BA9F00C3FE21 /* logo.png in Resources */,
 				5DEC06091CC03F7500F6C2C2 /* Main.storyboard in Resources */,
+				5DC5BE991CC2BA9F00C3FE21 /* FCTBot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +426,7 @@
 				5DEC06221CC03F7500F6C2C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DEC06231CC03F7500F6C2C2 /* Build configuration list for PBXNativeTarget "FCTBubbleChatSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +435,7 @@
 				5DEC06251CC03F7500F6C2C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

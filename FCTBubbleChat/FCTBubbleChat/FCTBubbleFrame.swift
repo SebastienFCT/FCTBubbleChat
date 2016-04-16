@@ -37,9 +37,13 @@ public class FCTBubbleFrame: UIView {
             if picMode {
                 let avatar = UIImageView(frame: CGRect(x: 5, y: 5, width: 60, height: 60))
                 avatar.backgroundColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
-                avatar.layer.borderColor = UIColor.whiteColor().CGColor
-                avatar.layer.borderWidth = 2.0
                 avatar.layer.cornerRadius = 20
+                avatar.layer.masksToBounds = true
+                
+                if avatarPic != nil {
+                    avatar.image = avatarPic!
+                    avatar.contentMode = .ScaleAspectFit
+                }
                 
                 self.addSubview(avatar)
                 
@@ -77,9 +81,13 @@ public class FCTBubbleFrame: UIView {
             if picMode {
                 let avatar = UIImageView(frame: CGRect(x: bounds.width - 65, y: 5, width: 60, height: 60))
                 avatar.backgroundColor = UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
-                avatar.layer.borderColor = UIColor.whiteColor().CGColor
-                avatar.layer.borderWidth = 2.0
                 avatar.layer.cornerRadius = 20
+                avatar.layer.masksToBounds = true
+                
+                if avatarPic != nil {
+                    avatar.image = avatarPic!
+                    avatar.contentMode = .ScaleAspectFit
+                }
                 
                 self.addSubview(avatar)
                 
