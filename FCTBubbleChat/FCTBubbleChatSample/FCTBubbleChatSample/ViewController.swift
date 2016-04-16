@@ -13,23 +13,22 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
     
     var bubbleTableSample: FCTBubbleChatTableView!
     var dataArray: Array = [FCTBubbleData]()
+    let bounds: CGRect = UIScreen.mainScreen().bounds
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.generateData()
         
+        self.generateData()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
-        let bounds: CGRect = UIScreen.mainScreen().bounds
-        
+        // FCTBubbleTable Sample
         bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: UIScreen.mainScreen().bounds.size.height))
-        bubbleTableSample.avatarMode = true
         bubbleTableSample.bubbleDatasource = self
-        bubbleTableSample.backgroundColor = UIColor.clearColor()
+        
+        bubbleTableSample.displayShadow = true
+        bubbleTableSample.avatarMode = true
         
         self.view.addSubview(bubbleTableSample)
-        bubbleTableSample.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +36,7 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
 
-    //MARK: FCTBubbleChat
+    //MARK: - FCTBubbleChat Management
     
     func numberOfBubbleForBubbleTable(bubbleTable: FCTBubbleChatTableView) -> Int {
         return 3
@@ -49,7 +48,7 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         return data
     }
     
-    //MARK: Helpers
+    //MARK: - Helpers
     
     func generateData() {
         let data1 = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), stringContent: "Hi there, is this the new FCTBubbleChat?", type: .Mine)

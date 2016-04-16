@@ -11,18 +11,27 @@ import UIKit
 @IBDesignable
 public class FCTBubbleFrame: UIView {
     
-    var bubbleColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
-    public var text: String = "hello world!"
-    
-    // Customization
+    private var bubbleColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
+
     // * Text
-    private var textFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: 20.0)!
-    private var textColor: UIColor = UIColor.whiteColor()
-    
-    public var picMode: Bool = true
-    public var bubbleType: FCTBubbleDataType = .Mine
+    internal var text: String = ""
+    internal var textFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: 20.0)!
+    internal var textColor: UIColor = UIColor.whiteColor()
+    internal var avatarColor: UIColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
+    internal var avatarFont = UIFont(name: "HiraKakuProN-W3", size: 15.0)!
+    internal var textBackgroundColor: UIColor = UIColor.clearColor()
+    // * Shadow
+    internal var displayShadow: Bool = true
+    // * Avatar
+    public var picMode: Bool = false
     public var avatarPic: UIImage?
-    public var username: String = "Username"
+    // * Other
+    internal var bubbleType: FCTBubbleDataType = .Mine
+    internal var username: String = "Unknown"
+    internal var bubbleMineColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
+    internal var bubbleOtherColor: UIColor = UIColor(red: 244/255.0, green: 198/255.0, blue: 211/255.0, alpha: 1.0)
+    
+    
     
     override public func layoutSubviews() {
         super.layoutSubviews()
@@ -35,7 +44,7 @@ public class FCTBubbleFrame: UIView {
         
         switch bubbleType {
         case .Mine:
-            bubbleColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
+            bubbleColor = bubbleMineColor
             
             if picMode {
                 let avatar = UIImageView(frame: CGRect(x: 5, y: 5, width: 60, height: 60))
@@ -73,7 +82,7 @@ public class FCTBubbleFrame: UIView {
                 label.frame = CGRect(x: 40, y: 50, width: bounds.width - 105, height: bounds.height - 70)
             }
         case .Other:
-            bubbleColor = UIColor(red: 244/255.0, green: 198/255.0, blue: 211/255.0, alpha: 1.0)
+            bubbleColor = bubbleOtherColor
             
             if picMode {
                 let avatar = UIImageView(frame: CGRect(x: bounds.width - 65, y: 5, width: 60, height: 60))
@@ -115,29 +124,32 @@ public class FCTBubbleFrame: UIView {
         }
         
         usernameLabel.text = username
-        usernameLabel.textColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
+        usernameLabel.font = avatarFont
+        usernameLabel.textColor = avatarColor
         
         self.addSubview(usernameLabel)
+        
+        shapeLayer.path = path.CGPath
+        shapeLayer.fillColor = bubbleColor.CGColor
+        
+        if displayShadow {
+            let shadowPath: UIBezierPath = UIBezierPath(rect: self.bounds)
+            self.layer.masksToBounds = false;
+            self.layer.shadowColor = UIColor.blackColor().CGColor;
+            self.layer.shadowOffset = CGSizeMake(0.5, 0.5);
+            self.layer.shadowOpacity = 0.3;
+            
+            shapeLayer.shadowPath = shadowPath.CGPath
+        }
+        
+        self.layer.addSublayer(shapeLayer)
         
         label.text = text
         label.numberOfLines = 0
         label.font = textFont
         label.textColor = textColor
-        label.backgroundColor = UIColor.clearColor()
+        label.backgroundColor = textBackgroundColor
         
-        shapeLayer.path = path.CGPath
-        
-        let shadowPath: UIBezierPath = UIBezierPath(rect: self.bounds)
-        self.layer.masksToBounds = false;
-        self.layer.shadowColor = UIColor.blackColor().CGColor;
-        self.layer.shadowOffset = CGSizeMake(0.5, 0.5);
-        self.layer.shadowOpacity = 0.3;
-        
-        shapeLayer.shadowPath = shadowPath.CGPath
-        
-        shapeLayer.fillColor = bubbleColor.CGColor
-        
-        self.layer.addSublayer(shapeLayer)
         self.addSubview(label)
     }
 }

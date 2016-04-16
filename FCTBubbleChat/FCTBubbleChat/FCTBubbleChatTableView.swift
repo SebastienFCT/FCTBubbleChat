@@ -15,14 +15,30 @@ public protocol FCTBubbleChatTableViewDataSource: NSObjectProtocol {
 
 public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
 
-    // BubbleChar Customization
+    //MARK: - Custom Variables
+    
+    /// The font of your bubble text content
     public var bubbleFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: 20.0)!
-    public var avatarNameFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: 20.0)!
+    /// The color of the bubble text content
+    public var bubbleFontColor: UIColor = UIColor.whiteColor()
+    /// The font of the avatar name label
+    public var avatarNameFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: 15.0)!
+    /// The color of the avatar name label
+    public var avatarNameFontColor: UIColor = UIColor.whiteColor()
+    /// Display the avatar mode (default: false)
+    public var avatarMode: Bool = false
+    /// The color for the bubble of type .Mine
+    public var bubbleMineColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
+    /// The color for the bubble of type .Other
+    public var bubbleOtherColor: UIColor = UIColor(red: 244/255.0, green: 198/255.0, blue: 211/255.0, alpha: 1.0)
+    /// Display shadow (default: false)
+    public var displayShadow: Bool = false
     
     public var bubbleDatasource: FCTBubbleChatTableViewDataSource?
-    public var avatarMode: Bool = false
-    var bubbleDataList: Array<FCTBubbleData?> = Array()
-    let reusableCellID: String = "fctBubbleCell"
+    private var bubbleDataList: Array<FCTBubbleData?> = Array()
+    private let reusableCellID: String = "fctBubbleCell"
+    
+    //MARK: - Init
     
     init() {
         super.init(frame: CGRectZero, style: .Plain)
@@ -43,9 +59,12 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         self.dataSource = self
         
         self.separatorStyle = .None
+        self.backgroundColor = UIColor.clearColor()
         
         self.registerNib(UINib(nibName: "FCTBubbleTableViewCell", bundle: NSBundle.init(identifier: "sfct.FCTBubbleChat")), forCellReuseIdentifier: reusableCellID)
     }
+    
+    //MARK: - FCTBubbleTable Mangement
     
     override public func reloadData() {
         guard let datasource = self.bubbleDatasource, let numberOfRow = self.bubbleDatasource?.numberOfBubbleForBubbleTable(self) else {
@@ -68,6 +87,7 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier(reusableCellID) as! FCTBubbleTableViewCell?
         
         if (cell == nil) {
@@ -80,36 +100,38 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
             return cell!
         }
         
-        cell?.bubbleFrame.text = data.stringContent!
-        cell?.bubbleFrame.bubbleType = data.type
-        cell?.bubbleFrame.picMode = avatarMode
-        cell?.bubbleFrame.username = data.userName!
         cell?.backgroundColor = UIColor.clearColor()
+        cell?.bubbleFrame.textFont = self.bubbleFont
+        cell?.bubbleFrame.textColor = self.bubbleFontColor
+        cell?.bubbleFrame.avatarFont = self.avatarNameFont
+        cell?.bubbleFrame.avatarColor = self.avatarNameFontColor
+        cell?.bubbleFrame.bubbleMineColor = self.bubbleMineColor
+        cell?.bubbleFrame.bubbleOtherColor = self.bubbleOtherColor
+        cell?.bubbleFrame.displayShadow = self.displayShadow
         
-        guard let pic = data.userPic else {
-            return cell!
+        cell?.bubbleFrame.bubbleType = data.type
+        
+        cell?.bubbleFrame.text = data.stringContent != nil ? data.stringContent! : ""
+        cell?.bubbleFrame.username = data.userName != nil ? data.userName! : ""
+        
+        if avatarMode {
+            cell?.bubbleFrame.picMode = avatarMode
+            cell?.bubbleFrame.avatarPic = data.userPic != nil ? data.userPic! : nil
         }
-        
-        cell?.bubbleFrame.avatarPic = pic
 
         return cell!
     }
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        var text = ""
-        
         guard let data = bubbleDataList[indexPath.row] else {
-            text = "Hello Swift Developer, your data has no stringContent here..."
             return 20.0
         }
-        
-        text = data.stringContent!
     
         if avatarMode {
-            return 80 + text.heightWithConstrainedWidth(self.frame.width - 135, font: bubbleFont)
+            return 80 + data.stringContent!.heightWithConstrainedWidth(self.frame.width - 135, font: bubbleFont)
         } else {
-            return 80 + text.heightWithConstrainedWidth(self.frame.width - 105, font: bubbleFont)
+            return 80 + data.stringContent!.heightWithConstrainedWidth(self.frame.width - 105, font: bubbleFont)
         }
     }
 
