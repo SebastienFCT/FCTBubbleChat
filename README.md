@@ -24,6 +24,14 @@ self.view.addSubview(bubbleTableSample)
 
 ## Usage
 
+- **Feed your bubble table with designed data**
+
+```swift
+let data = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), stringContent: "Hi there, is this the new FCTBubbleChat?", type: .Mine)
+```
+
+> See [more about FCTBubbleData initialization](#)
+
 - **Your `FCTBubbleChatTableView` can be customized by several attributes**
 
 ```swift
