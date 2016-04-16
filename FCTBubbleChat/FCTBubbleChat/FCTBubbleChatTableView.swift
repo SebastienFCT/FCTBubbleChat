@@ -15,6 +15,10 @@ public protocol FCTBubbleChatTableViewDataSource: NSObjectProtocol {
 
 public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
 
+    // BubbleChar Customization
+    public var bubbleFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: 20.0)!
+    public var avatarNameFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: 20.0)!
+    
     public var bubbleDatasource: FCTBubbleChatTableViewDataSource?
     public var avatarMode: Bool = false
     var bubbleDataList: Array<FCTBubbleData?> = Array()
@@ -80,6 +84,7 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         cell?.bubbleFrame.bubbleType = data.type
         cell?.bubbleFrame.picMode = avatarMode
         cell?.bubbleFrame.username = data.userName!
+        cell?.backgroundColor = UIColor.clearColor()
         
         guard let pic = data.userPic else {
             return cell!
@@ -102,9 +107,9 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         text = data.stringContent!
     
         if avatarMode {
-            return 120 + text.heightWithConstrainedWidth(self.frame.width - 60, font: UIFont(name: "HiraKakuProN-W3", size: 20.0)!)
+            return 80 + text.heightWithConstrainedWidth(self.frame.width - 135, font: bubbleFont)
         } else {
-            return 80 + text.heightWithConstrainedWidth(self.frame.width - 60, font: UIFont(name: "HiraKakuProN-W3", size: 20.0)!)
+            return 80 + text.heightWithConstrainedWidth(self.frame.width - 105, font: bubbleFont)
         }
     }
 

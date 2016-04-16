@@ -19,11 +19,14 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
         self.generateData()
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        
         let bounds: CGRect = UIScreen.mainScreen().bounds
         
         bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: UIScreen.mainScreen().bounds.size.height))
         bubbleTableSample.avatarMode = true
         bubbleTableSample.bubbleDatasource = self
+        bubbleTableSample.backgroundColor = UIColor.clearColor()
         
         self.view.addSubview(bubbleTableSample)
         bubbleTableSample.reloadData()

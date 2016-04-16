@@ -14,9 +14,13 @@ public class FCTBubbleFrame: UIView {
     var bubbleColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
     public var text: String = "hello world!"
     
-    // Custom
+    // Customization
+    // * Text
+    private var textFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: 20.0)!
+    private var textColor: UIColor = UIColor.whiteColor()
+    
     public var picMode: Bool = true
-    public var bubbleType: FCTBubbleDataType = .Other
+    public var bubbleType: FCTBubbleDataType = .Mine
     public var avatarPic: UIImage?
     public var username: String = "Username"
     
@@ -24,7 +28,6 @@ public class FCTBubbleFrame: UIView {
         super.layoutSubviews()
         
         let path = UIBezierPath()
-        
         let shapeLayer = CAShapeLayer()
         
         let label: UILabel = UILabel()
@@ -48,9 +51,6 @@ public class FCTBubbleFrame: UIView {
                 self.addSubview(avatar)
                 
                 usernameLabel.frame = CGRect(x: 80, y: 5, width: bounds.width - 90, height: 25)
-                usernameLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
-                
-                self.addSubview(usernameLabel)
                 
                 path.moveToPoint(CGPoint(x: 80, y: 35))
                 path.addLineToPoint(CGPoint(x: bounds.width - 5, y: 35))
@@ -62,9 +62,6 @@ public class FCTBubbleFrame: UIView {
                 label.frame = CGRect(x: 115, y: 50, width: bounds.width - 135, height: bounds.height - 70)
             } else {
                 usernameLabel.frame = CGRect(x: 5, y: 5, width: bounds.width - 10, height: 25)
-                usernameLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
-                
-                self.addSubview(usernameLabel)
                 
                 path.moveToPoint(CGPoint(x: 5, y: 35))
                 path.addLineToPoint(CGPoint(x: bounds.width - 50, y: 35))
@@ -92,11 +89,7 @@ public class FCTBubbleFrame: UIView {
                 self.addSubview(avatar)
                 
                 usernameLabel.frame = CGRect(x: 5, y: 5, width: bounds.width - 85, height: 25)
-                usernameLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
-                usernameLabel.textAlignment = .Right
-                
-                self.addSubview(usernameLabel)
-                
+
                 path.moveToPoint(CGPoint(x: bounds.width - 75, y: 35))
                 path.addLineToPoint(CGPoint(x: bounds.width - 95, y: 55))
                 path.addLineToPoint(CGPoint(x: bounds.width - 95, y: bounds.height - 5))
@@ -107,10 +100,6 @@ public class FCTBubbleFrame: UIView {
                 label.frame = CGRect(x: 20, y: 50, width: bounds.width - 130, height: bounds.height - 70)
             } else {
                 usernameLabel.frame = CGRect(x: 5, y: 5, width: bounds.width - 10, height: 25)
-                usernameLabel.textColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
-                usernameLabel.textAlignment = .Right
-                
-                self.addSubview(usernameLabel)
                 
                 path.moveToPoint(CGPoint(x: bounds.width - 5, y: 35))
                 path.addLineToPoint(CGPoint(x: bounds.width - 25, y: 55))
@@ -121,14 +110,19 @@ public class FCTBubbleFrame: UIView {
                 
                 label.frame = CGRect(x: 65, y: 50, width: bounds.width - 105, height: bounds.height - 70)
             }
+            
+            usernameLabel.textAlignment = .Right
         }
         
         usernameLabel.text = username
+        usernameLabel.textColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
+        
+        self.addSubview(usernameLabel)
         
         label.text = text
         label.numberOfLines = 0
-        label.font = UIFont(name: "HiraKakuProN-W3", size: 20.0)
-        label.textColor = UIColor.whiteColor()
+        label.font = textFont
+        label.textColor = textColor
         label.backgroundColor = UIColor.clearColor()
         
         shapeLayer.path = path.CGPath
