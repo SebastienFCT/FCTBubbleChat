@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D02F2F71CB80F590019B8AB /* FCTBubbleChat.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D02F2F61CB80F590019B8AB /* FCTBubbleChat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D02F2FE1CB80F5A0019B8AB /* FCTBubbleChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D02F2F31CB80F590019B8AB /* FCTBubbleChat.framework */; };
+		5D02F3031CB80F5A0019B8AB /* FCTBubbleChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3021CB80F5A0019B8AB /* FCTBubbleChatTests.swift */; };
+		5D02F3131CB811570019B8AB /* FCTBubbleChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */; };
+		5D02F3151CB813660019B8AB /* FCTBubbleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3141CB813660019B8AB /* FCTBubbleData.swift */; };
+		5D6315611CC14FD30050470D /* FCTBubbleFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6315601CC14FD30050470D /* FCTBubbleFrame.swift */; };
+		5DEC06311CC0421E00F6C2C2 /* FCTBubbleChatTableView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DEC06341CC042D800F6C2C2 /* FCTBubbleData.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5D02F3141CB813660019B8AB /* FCTBubbleData.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DEC063A1CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC06381CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift */; };
+		5DEC063F1CC0749900F6C2C2 /* FCTBubbleTableViewCell.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5DEC06381CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DEC06401CC0771800F6C2C2 /* FCTBubbleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DEC06391CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.xib */; };
+		5DEC06451CC0A11400F6C2C2 /* String+FCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC06441CC0A11400F6C2C2 /* String+FCTExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D02F2FF1CB80F5A0019B8AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D02F2EA1CB80F590019B8AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D02F2F21CB80F590019B8AB;
+			remoteInfo = FCTBubbleChat;
+		};
+		5DEC062B1CC03F7600F6C2C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DEC06261CC03F7500F6C2C2 /* FCTBubbleChatSample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DEC06001CC03F7500F6C2C2;
+			remoteInfo = FCTBubbleChatSample;
+		};
+		5DEC062D1CC03F7600F6C2C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DEC06261CC03F7500F6C2C2 /* FCTBubbleChatSample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DEC06171CC03F7500F6C2C2;
+			remoteInfo = FCTBubbleChatSampleTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5D02F2F31CB80F590019B8AB /* FCTBubbleChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FCTBubbleChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D02F2F61CB80F590019B8AB /* FCTBubbleChat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCTBubbleChat.h; sourceTree = "<group>"; };
+		5D02F2F81CB80F590019B8AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D02F2FD1CB80F5A0019B8AB /* FCTBubbleChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FCTBubbleChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D02F3021CB80F5A0019B8AB /* FCTBubbleChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCTBubbleChatTests.swift; sourceTree = "<group>"; };
+		5D02F3041CB80F5A0019B8AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleChatTableView.swift; sourceTree = "<group>"; };
+		5D02F3141CB813660019B8AB /* FCTBubbleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleData.swift; sourceTree = "<group>"; };
+		5D6315601CC14FD30050470D /* FCTBubbleFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleFrame.swift; sourceTree = "<group>"; };
+		5DEC06261CC03F7500F6C2C2 /* FCTBubbleChatSample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FCTBubbleChatSample.xcodeproj; path = FCTBubbleChatSample/FCTBubbleChatSample.xcodeproj; sourceTree = "<group>"; };
+		5DEC06381CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleTableViewCell.swift; sourceTree = "<group>"; };
+		5DEC06391CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTBubbleTableViewCell.xib; sourceTree = "<group>"; };
+		5DEC06441CC0A11400F6C2C2 /* String+FCTExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+FCTExtension.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D02F2EF1CB80F590019B8AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D02F2FA1CB80F5A0019B8AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D02F2FE1CB80F5A0019B8AB /* FCTBubbleChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D02F2E91CB80F590019B8AB = {
+			isa = PBXGroup;
+			children = (
+				5DEC06261CC03F7500F6C2C2 /* FCTBubbleChatSample.xcodeproj */,
+				5D02F2F51CB80F590019B8AB /* FCTBubbleChat */,
+				5D02F3011CB80F5A0019B8AB /* FCTBubbleChatTests */,
+				5D02F2F41CB80F590019B8AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5D02F2F41CB80F590019B8AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D02F2F31CB80F590019B8AB /* FCTBubbleChat.framework */,
+				5D02F2FD1CB80F5A0019B8AB /* FCTBubbleChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5D02F2F51CB80F590019B8AB /* FCTBubbleChat */ = {
+			isa = PBXGroup;
+			children = (
+				5D6315621CC15BBB0050470D /* Model */,
+				5DEC06431CC0A0FE00F6C2C2 /* Helpers */,
+				5D02F30D1CB80F770019B8AB /* FCTBubbleTableView */,
+				5D02F2F61CB80F590019B8AB /* FCTBubbleChat.h */,
+				5D02F2F81CB80F590019B8AB /* Info.plist */,
+			);
+			path = FCTBubbleChat;
+			sourceTree = "<group>";
+		};
+		5D02F3011CB80F5A0019B8AB /* FCTBubbleChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				5D02F3021CB80F5A0019B8AB /* FCTBubbleChatTests.swift */,
+				5D02F3041CB80F5A0019B8AB /* Info.plist */,
+			);
+			path = FCTBubbleChatTests;
+			sourceTree = "<group>";
+		};
+		5D02F30D1CB80F770019B8AB /* FCTBubbleTableView */ = {
+			isa = PBXGroup;
+			children = (
+				5DEC06371CC06E4700F6C2C2 /* FCTBubbleCell */,
+				5D3F484B1CBF56A500184025 /* FCTBubbleFrame */,
+				5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */,
+			);
+			name = FCTBubbleTableView;
+			sourceTree = "<group>";
+		};
+		5D3F484B1CBF56A500184025 /* FCTBubbleFrame */ = {
+			isa = PBXGroup;
+			children = (
+				5D6315601CC14FD30050470D /* FCTBubbleFrame.swift */,
+			);
+			name = FCTBubbleFrame;
+			sourceTree = "<group>";
+		};
+		5D6315621CC15BBB0050470D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D02F3141CB813660019B8AB /* FCTBubbleData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5DEC06271CC03F7500F6C2C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DEC062C1CC03F7600F6C2C2 /* FCTBubbleChatSample.app */,
+				5DEC062E1CC03F7600F6C2C2 /* FCTBubbleChatSampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DEC06371CC06E4700F6C2C2 /* FCTBubbleCell */ = {
+			isa = PBXGroup;
+			children = (
+				5DEC06381CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift */,
+				5DEC06391CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.xib */,
+			);
+			name = FCTBubbleCell;
+			sourceTree = "<group>";
+		};
+		5DEC06431CC0A0FE00F6C2C2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5DEC06441CC0A11400F6C2C2 /* String+FCTExtension.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5D02F2F01CB80F590019B8AB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D02F2F71CB80F590019B8AB /* FCTBubbleChat.h in Headers */,
+				5DEC06311CC0421E00F6C2C2 /* FCTBubbleChatTableView.swift in Headers */,
+				5DEC063F1CC0749900F6C2C2 /* FCTBubbleTableViewCell.swift in Headers */,
+				5DEC06341CC042D800F6C2C2 /* FCTBubbleData.swift in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5D02F2F21CB80F590019B8AB /* FCTBubbleChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D02F3071CB80F5A0019B8AB /* Build configuration list for PBXNativeTarget "FCTBubbleChat" */;
+			buildPhases = (
+				5D02F2EE1CB80F590019B8AB /* Sources */,
+				5D02F2EF1CB80F590019B8AB /* Frameworks */,
+				5D02F2F01CB80F590019B8AB /* Headers */,
+				5D02F2F11CB80F590019B8AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FCTBubbleChat;
+			productName = FCTBubbleChat;
+			productReference = 5D02F2F31CB80F590019B8AB /* FCTBubbleChat.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5D02F2FC1CB80F5A0019B8AB /* FCTBubbleChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D02F30A1CB80F5A0019B8AB /* Build configuration list for PBXNativeTarget "FCTBubbleChatTests" */;
+			buildPhases = (
+				5D02F2F91CB80F5A0019B8AB /* Sources */,
+				5D02F2FA1CB80F5A0019B8AB /* Frameworks */,
+				5D02F2FB1CB80F5A0019B8AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D02F3001CB80F5A0019B8AB /* PBXTargetDependency */,
+			);
+			name = FCTBubbleChatTests;
+			productName = FCTBubbleChatTests;
+			productReference = 5D02F2FD1CB80F5A0019B8AB /* FCTBubbleChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5D02F2EA1CB80F590019B8AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = sebfct;
+				TargetAttributes = {
+					5D02F2F21CB80F590019B8AB = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					5D02F2FC1CB80F5A0019B8AB = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 5D02F2ED1CB80F590019B8AB /* Build configuration list for PBXProject "FCTBubbleChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5D02F2E91CB80F590019B8AB;
+			productRefGroup = 5D02F2F41CB80F590019B8AB /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5DEC06271CC03F7500F6C2C2 /* Products */;
+					ProjectRef = 5DEC06261CC03F7500F6C2C2 /* FCTBubbleChatSample.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				5D02F2F21CB80F590019B8AB /* FCTBubbleChat */,
+				5D02F2FC1CB80F5A0019B8AB /* FCTBubbleChatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5DEC062C1CC03F7600F6C2C2 /* FCTBubbleChatSample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = FCTBubbleChatSample.app;
+			remoteRef = 5DEC062B1CC03F7600F6C2C2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5DEC062E1CC03F7600F6C2C2 /* FCTBubbleChatSampleTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FCTBubbleChatSampleTests.xctest;
+			remoteRef = 5DEC062D1CC03F7600F6C2C2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D02F2F11CB80F590019B8AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DEC06401CC0771800F6C2C2 /* FCTBubbleTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D02F2FB1CB80F5A0019B8AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D02F2EE1CB80F590019B8AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DEC063A1CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift in Sources */,
+				5D02F3131CB811570019B8AB /* FCTBubbleChatTableView.swift in Sources */,
+				5D02F3151CB813660019B8AB /* FCTBubbleData.swift in Sources */,
+				5D6315611CC14FD30050470D /* FCTBubbleFrame.swift in Sources */,
+				5DEC06451CC0A11400F6C2C2 /* String+FCTExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D02F2F91CB80F5A0019B8AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D02F3031CB80F5A0019B8AB /* FCTBubbleChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D02F3001CB80F5A0019B8AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D02F2F21CB80F590019B8AB /* FCTBubbleChat */;
+			targetProxy = 5D02F2FF1CB80F5A0019B8AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5D02F3051CB80F5A0019B8AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5D02F3061CB80F5A0019B8AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5D02F3081CB80F5A0019B8AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FCTBubbleChat/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sfct.FCTBubbleChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5D02F3091CB80F5A0019B8AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FCTBubbleChat/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sfct.FCTBubbleChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5D02F30B1CB80F5A0019B8AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FCTBubbleChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sfct.FCTBubbleChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5D02F30C1CB80F5A0019B8AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FCTBubbleChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sfct.FCTBubbleChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5D02F2ED1CB80F590019B8AB /* Build configuration list for PBXProject "FCTBubbleChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D02F3051CB80F5A0019B8AB /* Debug */,
+				5D02F3061CB80F5A0019B8AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D02F3071CB80F5A0019B8AB /* Build configuration list for PBXNativeTarget "FCTBubbleChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D02F3081CB80F5A0019B8AB /* Debug */,
+				5D02F3091CB80F5A0019B8AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D02F30A1CB80F5A0019B8AB /* Build configuration list for PBXNativeTarget "FCTBubbleChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D02F30B1CB80F5A0019B8AB /* Debug */,
+				5D02F30C1CB80F5A0019B8AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5D02F2EA1CB80F590019B8AB /* Project object */;
+}
