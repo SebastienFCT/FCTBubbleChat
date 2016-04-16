@@ -5,10 +5,10 @@
 **FCTBubbleChat** makes it easy to create a chatting view controller in your project
 
 ```swift
-	bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: UIScreen.mainScreen().bounds.size.height))
-    bubbleTableSample.bubbleDatasource = self
-                
-    self.view.addSubview(bubbleTableSample)
+bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: UIScreen.mainScreen().bounds.size.height))
+bubbleTableSample.bubbleDatasource = self
+            
+self.view.addSubview(bubbleTableSample)
 ```
 
 <p align="center">
@@ -27,8 +27,8 @@
 - **Your `FCTBubbleChatTableView` can be customized by several attributes**
 
 ```swift
-	bubbleTableSample.avatarMode = true
-	bubbleTableSample.bubbleMineColor = UIColor.redColor()
+bubbleTableSample.avatarMode = true
+bubbleTableSample.bubbleMineColor = UIColor.redColor()
 ```
 
 > See [all the methods](#references)
