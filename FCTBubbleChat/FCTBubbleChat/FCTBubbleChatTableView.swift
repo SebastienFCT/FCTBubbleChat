@@ -90,7 +90,7 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         if bubbleDataList.count > 1 {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
-            let currentDate = bubbleDataList[0].date
+            var currentDate = bubbleDataList[0].date
             
             for i in 1..<numberOfRow {
                 let newDate = bubbleDataList[i].date
@@ -100,6 +100,11 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
                     bubbleMatrix.append(bubbleMatrixRow)
                     bubbleMatrixRow = Array<FCTBubbleData?>()
                     bubbleMatrixRow.append(bubbleDataList[i])
+                    currentDate = bubbleDataList[i].date
+                }
+                
+                if i == numberOfRow - 1 {
+                    bubbleMatrix.append(bubbleMatrixRow)
                 }
             }
         }
