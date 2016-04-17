@@ -110,4 +110,4 @@ Anyway, If you like it feel free to ask for [improvement](https://github.com/Seb
 
 | Paypal | Bitcoin |
 | ------ | ------- |
-| [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/sebastienfct) |  <center> ![](https://bitcoin.org/img/icons/logotop.svg)](https://sebastienfct.bitcoinwallet.com/)<br />1KRrrKX76gY2QLNu2uDirHhe4XUQguoQo2 </center> |
+| [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/sebastienfct) |  <center> [![](https://bitcoin.org/img/icons/logotop.svg)](https://sebastienfct.bitcoinwallet.com/)<br />1KRrrKX76gY2QLNu2uDirHhe4XUQguoQo2 </center> |

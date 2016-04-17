@@ -77,6 +77,8 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
             }
         }
         
+        bubbleDataList.sort({ $0!.date.compare($1!.date) == NSComparisonResult.OrderedAscending })
+        
         super.reloadData()
     }
     

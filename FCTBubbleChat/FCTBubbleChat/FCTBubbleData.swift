@@ -18,18 +18,20 @@ public class FCTBubbleData: NSObject {
     var type: FCTBubbleDataType = .Mine
     
     // Bubble infos
-    var userName: String?
-    var userPic: UIImage?
+    internal var userName: String?
+    internal var userPic: UIImage?
+    internal var date: NSDate!
     
     // Bubble content
-    var stringContent: String?
+    internal var stringContent: String?
     
-    public convenience init(userName: String?, userPic: UIImage?, stringContent: String, type: FCTBubbleDataType) {
+    public convenience init(userName: String?, userPic: UIImage?, date: NSDate, stringContent: String, type: FCTBubbleDataType) {
         self.init()
         
         self.userName = userName
         self.userPic = userPic
         self.type = type
+        self.date = date
         
         self.stringContent = stringContent
     }
