@@ -37,6 +37,7 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
     public var bubbleDatasource: FCTBubbleChatTableViewDataSource?
     private var bubbleMatrix: Array<Array<FCTBubbleData?>> = []
     private let reusableCellID: String = "fctBubbleCell"
+    private let reusableHeaderID: String = "fctBubbleHeader"
     
     //MARK: - Init
     
@@ -118,6 +119,37 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         return bubbleMatrix.count
     }
     
+    public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionData = bubbleMatrix[section]
+        
+        let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier(reusableHeaderID)
+        
+        if header == nil {
+            let header = UITableViewHeaderFooterView()
+        }
+        
+        guard let title = bubbleMatrix[section][0] else {
+            return nil
+        }
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let currentDate = title.date
+        
+        let sectionHeader = UILabel(frame: CGRect(x: 0, y: 10, width: bounds.width, height: 30))
+        sectionHeader.backgroundColor = UIColor.clearColor()
+        sectionHeader.text = "--- \(dateFormatter.stringFromDate(currentDate)) ---"
+        sectionHeader.textColor = UIColor.darkGrayColor()
+        sectionHeader.textAlignment = .Center
+        sectionHeader.font = UIFont(name: "HiraKakuProN-W3", size: 20.0)!
+        
+        return sectionHeader
+    }
+    
+    public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
+    
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = bubbleMatrix[section]
         return section.count
@@ -125,10 +157,11 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(reusableCellID) as! FCTBubbleTableViewCell?
         let section = bubbleMatrix[indexPath.section]
         
-        if (cell == nil) {
+        let cell = tableView.dequeueReusableCellWithIdentifier(reusableCellID) as! FCTBubbleTableViewCell?
+        
+        if cell == nil {
             tableView.registerNib(UINib(nibName: "FCTBubbleTableViewCell", bundle: NSBundle.init(identifier: "sfct.FCTBubbleChat")), forCellReuseIdentifier: reusableCellID)
             let cell = FCTBubbleTableViewCell()
         }
