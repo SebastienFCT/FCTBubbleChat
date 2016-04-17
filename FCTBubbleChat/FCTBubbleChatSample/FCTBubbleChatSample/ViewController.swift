@@ -39,7 +39,7 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
     //MARK: - FCTBubbleChat Management
     
     func numberOfBubbleForBubbleTable(bubbleTable: FCTBubbleChatTableView) -> Int {
-        return 3
+        return dataArray.count
     }
     
     func bubbleTableView(bubbleTableView: FCTBubbleChatTableView, bubbleForRowAtIndex index: Int) -> FCTBubbleData {
@@ -57,6 +57,8 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         dataArray.append(data2)
         let data3 = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), stringContent: "Sounds great! Tell me more about its features", type: .Mine)
         dataArray.append(data3)
+        let data4 = FCTBubbleData(userName: "FCTChat Bot", userPic: UIImage(named:"FCTBot"), stringContent: "I. Bubble frame flexible: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", type: .Other)
+        dataArray.append(data4)
     }
     
     override func prefersStatusBarHidden() -> Bool {
