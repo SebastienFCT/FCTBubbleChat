@@ -101,3 +101,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Pay me a :coffee: ?
+
+My work is totally free of use/reuse/modification. I love open-sourcing as least as much as I love programming
+
+Anyway, If you like it feel free to ask for [improvement](https://github.com/SebastienFCT/FCTBubbleChat/issues), [email me](mailto:sebastienfct@gmail.com) and/or donate:
+
+| Paypal | Bitcoin |
+| ------ | ------- |
+| [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/sebastienfct) |  <center> ![1KRrrKX76gY2QLNu2uDirHhe4XUQguoQo2](https://sebastienfct.bitcoinwallet.com/)<br />1KRrrKX76gY2QLNu2uDirHhe4XUQguoQo2 </center> |
