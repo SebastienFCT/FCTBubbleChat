@@ -60,6 +60,7 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         
         self.separatorStyle = .None
         self.backgroundColor = UIColor.clearColor()
+        self.showsVerticalScrollIndicator = false
         
         self.registerNib(UINib(nibName: "FCTBubbleTableViewCell", bundle: NSBundle.init(identifier: "sfct.FCTBubbleChat")), forCellReuseIdentifier: reusableCellID)
     }
@@ -71,13 +72,15 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
             return
         }
         
+        bubbleDataList = Array()
+        
         if numberOfRow > 0 {
             for i in 0..<numberOfRow {
                 bubbleDataList.append(datasource.bubbleTableView(self, bubbleForRowAtIndex: i))
             }
         }
         
-        bubbleDataList.sort({ $0!.date.compare($1!.date) == NSComparisonResult.OrderedAscending })
+        bubbleDataList.sortInPlace({ $0!.date.compare($1!.date) == NSComparisonResult.OrderedAscending })
         
         super.reloadData()
     }
@@ -98,11 +101,13 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         }
         
         guard let data = bubbleDataList[indexPath.row] else {
-            cell?.bubbleFrame.text = "Hello Swift Developer, your data has no stringContent here..."
+            cell?.bubbleFrame.text = "Hello Swift Developer, possible error with bubbleDAtaList[indexPath.row]"
             return cell!
         }
         
         cell?.backgroundColor = UIColor.clearColor()
+        cell?.selectionStyle = .None
+        
         cell?.bubbleFrame.textFont = self.bubbleFont
         cell?.bubbleFrame.textColor = self.bubbleFontColor
         cell?.bubbleFrame.avatarFont = self.avatarNameFont

@@ -32,6 +32,7 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
     }
     
     override func viewDidAppear(animated: Bool) {
+        bubbleTableSample.reloadData()
         bubbleTableSample.scrollToBottom(true)
     }
 
