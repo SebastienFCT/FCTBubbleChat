@@ -35,7 +35,7 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
     public var displayShadow: Bool = false
     
     public var bubbleDatasource: FCTBubbleChatTableViewDataSource?
-    private var bubbleDataList: Array<FCTBubbleData?> = Array()
+    private var bubbleMatrix: Array<Array<FCTBubbleData?>> = []
     private let reusableCellID: String = "fctBubbleCell"
     
     //MARK: - Init
@@ -72,7 +72,8 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
             return
         }
         
-        bubbleDataList = Array()
+        var bubbleDataList: Array = Array<FCTBubbleData>()
+        bubbleMatrix = Array()
         
         if numberOfRow > 0 {
             for i in 0..<numberOfRow {
@@ -80,27 +81,54 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
             }
         }
         
-        bubbleDataList.sortInPlace({ $0!.date.compare($1!.date) == NSComparisonResult.OrderedAscending })
+        bubbleDataList.sortInPlace({ $0.date.compare($1.date) == NSComparisonResult.OrderedAscending })
+        
+        var bubbleMatrixRow: Array = Array<FCTBubbleData?>()
+        
+        bubbleMatrixRow.append(bubbleDataList[0])
+        
+        if bubbleDataList.count > 1 {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let currentDate = bubbleDataList[0].date
+            
+            for i in 1..<numberOfRow {
+                let newDate = bubbleDataList[i].date
+                if dateFormatter.stringFromDate(currentDate) == dateFormatter.stringFromDate(newDate) {
+                    bubbleMatrixRow.append(bubbleDataList[i])
+                } else {
+                    bubbleMatrix.append(bubbleMatrixRow)
+                    bubbleMatrixRow = Array<FCTBubbleData?>()
+                    bubbleMatrixRow.append(bubbleDataList[i])
+                }
+            }
+        }
         
         super.reloadData()
     }
     
     //MARK: - TableView Datasource
     
+    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return bubbleMatrix.count
+    }
+    
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bubbleDataList.count
+        let section = bubbleMatrix[section]
+        return section.count
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(reusableCellID) as! FCTBubbleTableViewCell?
+        let section = bubbleMatrix[indexPath.section]
         
         if (cell == nil) {
             tableView.registerNib(UINib(nibName: "FCTBubbleTableViewCell", bundle: NSBundle.init(identifier: "sfct.FCTBubbleChat")), forCellReuseIdentifier: reusableCellID)
             let cell = FCTBubbleTableViewCell()
         }
         
-        guard let data = bubbleDataList[indexPath.row] else {
+        guard let data = section[indexPath.row] else {
             cell?.bubbleFrame.text = "Hello Swift Developer, possible error with bubbleDAtaList[indexPath.row]"
             return cell!
         }
@@ -131,7 +159,9 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        guard let data = bubbleDataList[indexPath.row] else {
+        let section = bubbleMatrix[indexPath.section]
+        
+        guard let data = section[indexPath.row] else {
             return 20.0
         }
     
