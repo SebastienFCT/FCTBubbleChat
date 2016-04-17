@@ -5,7 +5,7 @@
 **FCTBubbleChat** makes it easy to create a chatting view controller in your project
 
 ```swift
-bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: UIScreen.mainScreen().bounds.size.height))
+let bubbleTableSample = FCTBubbleChatTableView(frame: self.bounds)
 bubbleTableSample.bubbleDatasource = self
             
 self.view.addSubview(bubbleTableSample)
@@ -39,7 +39,15 @@ bubbleTableSample.avatarMode = true
 bubbleTableSample.bubbleMineColor = UIColor.redColor()
 ```
 
-> See [all the methods](#references)
+> See [all the attributes](#attributes)
+
+- **Improve your User eXperience with custom methods**
+
+```swift
+bubbleTableSample.scrollToBottom(true)
+```
+
+> See [all the methods](#methods)
 
 ## Demo
 
@@ -61,6 +69,12 @@ bubbleTableSample.bubbleMineColor = UIColor.redColor()
 | bubbleMineColor     | The color for the bubble of type .Mine   | UIColor | table.bubbleMineColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)    |
 | bubbleOtherColor    | The color for the bubble of type .Other  | UIColor | table.bubbleOtherColor = UIColor(red: 244/255.0, green: 198/255.0, blue: 211/255.0, alpha: 1.0) |
 | displayShadow       | Display shadow (default: false)          | Bool    | table.displayShadow = true                                                                      |
+
+### Methods
+
+| Method                         | Description                                                        |
+|--------------------------------|--------------------------------------------------------------------|
+| scrollToBottom(animated: Bool) | Scroll your bubble table to its bottom, displaying the last bubble |
 
 ## Installation
 

@@ -22,13 +22,17 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
         // FCTBubbleTable Sample
-        bubbleTableSample = FCTBubbleChatTableView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: UIScreen.mainScreen().bounds.size.height))
+        bubbleTableSample = FCTBubbleChatTableView(frame: self.bounds)
         bubbleTableSample.bubbleDatasource = self
         
         bubbleTableSample.displayShadow = true
         bubbleTableSample.avatarMode = true
         
         self.view.addSubview(bubbleTableSample)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        bubbleTableSample.scrollToBottom(true)
     }
 
     override func didReceiveMemoryWarning() {

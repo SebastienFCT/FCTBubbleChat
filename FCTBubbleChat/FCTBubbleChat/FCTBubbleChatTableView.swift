@@ -134,5 +134,15 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
             return 80 + data.stringContent!.heightWithConstrainedWidth(self.frame.width - 105, font: bubbleFont)
         }
     }
+    
+    //MARK: - Public methods
+    
+    public func scrollToBottom(animated: Bool) {
+        let contentHeight = self.contentSize.height
+        
+        if contentHeight > self.bounds.size.height {
+            self.setContentOffset(CGPointMake(0, contentHeight - self.bounds.size.height), animated: animated)
+        }
+    }
 
 }
