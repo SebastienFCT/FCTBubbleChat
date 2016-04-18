@@ -37,6 +37,9 @@ public class FCTBubbleFrame: UIView {
     override public func layoutSubviews() {
         super.layoutSubviews()
         
+        self.subviews.forEach({ $0.removeFromSuperview() })
+        self.layer.sublayers?.forEach({ $0.removeFromSuperlayer() })
+        
         let path = UIBezierPath()
         let shapeLayer = CAShapeLayer()
         

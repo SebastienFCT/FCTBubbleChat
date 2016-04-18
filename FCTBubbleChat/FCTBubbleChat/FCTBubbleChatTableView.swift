@@ -165,11 +165,6 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         
         let cell = tableView.dequeueReusableCellWithIdentifier(reusableCellID, forIndexPath: indexPath) as! FCTBubbleTableViewCell
         
-        guard let data = section[indexPath.row] else {
-            cell.bubbleFrame.text = "Hello Swift Developer, possible error with bubbleDAtaList[indexPath.row]"
-            return cell
-        }
-        
         cell.backgroundColor = UIColor.clearColor()
         cell.selectionStyle = .None
         
@@ -180,6 +175,11 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         cell.bubbleFrame.bubbleMineColor = self.bubbleMineColor
         cell.bubbleFrame.bubbleOtherColor = self.bubbleOtherColor
         cell.bubbleFrame.displayShadow = self.displayShadow
+        
+        guard let data = section[indexPath.row] else {
+            cell.bubbleFrame.text = "Hello Swift Developer, possible error with bubbleDAtaList[indexPath.row]"
+            return cell
+        }
         
         cell.bubbleFrame.bubbleType = data.type
         cell.bubbleFrame.contentType = data.contentType
@@ -199,6 +199,8 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
             cell.bubbleFrame.picMode = avatarMode
             cell.bubbleFrame.avatarPic = data.userPic != nil ? data.userPic! : nil
         }
+        
+        cell.bubbleFrame.setNeedsLayout()
         
         return cell
     }
