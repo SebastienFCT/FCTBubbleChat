@@ -67,7 +67,7 @@ bubbleTableSample.scrollToBottom(true)
 ### Initialization
 
 * FCTBubbleData
-  * init(userName: String?, userPic: UIImage?, date: NSDate, stringContent: String, type: FCTBubbleDataType, contentType: FCTBubbleContentType)
+  * `init(userName: String?, userPic: UIImage?, date: NSDate, stringContent: String, type: FCTBubbleDataType, contentType: FCTBubbleContentType)`
 
 | Parameter     | Description                                   |
 |---------------|-----------------------------------------------|
@@ -78,7 +78,7 @@ bubbleTableSample.scrollToBottom(true)
 | type          | Bubble type. Will define the tail orientation |
 | contentType   | Bubble content type. Will lead the content    |
 
-  * init(userName: String?, userPic: UIImage?, date: NSDate, imageContent: UIImage, type: FCTBubbleDataType, contentType: FCTBubbleContentType)
+  * `init(userName: String?, userPic: UIImage?, date: NSDate, imageContent: UIImage, type: FCTBubbleDataType, contentType: FCTBubbleContentType)`
 
 | Parameter    | Description                                   |
 |--------------|-----------------------------------------------|
@@ -93,14 +93,14 @@ bubbleTableSample.scrollToBottom(true)
 
 | Name                | Description                              | Type    | Example                                                                                         |
 |---------------------|------------------------------------------|---------|-------------------------------------------------------------------------------------------------|
-| bubbleFont          | The font of your bubble text content     | UIFont  | table.bubbleFont = UIFont(name: "HiraKakuProN-W3", size: 20.0)!                                 |
-| bubbleFontColor     | The color of the bubble text content     | UIColor | table.bubbleFontColor = UIColor.whiteColor()                                                    |
-| avatarNameFont      | The font of the avatar name label        | UIFont  | table.avatarNameFont = UIFont(name: "HiraKakuProN-W3", size: 15.0)!                             |
-| avatarNameFontColor | The color of the avatar name label       | UIColor | table.avatarNameFontColor = UIColor.redColor()                                                  |
-| avatarMode          | Display the avatar mode (default: false) | Bool    | table.avatarMode = false                                                                        |
-| bubbleMineColor     | The color for the bubble of type .Mine   | UIColor | table.bubbleMineColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)    |
-| bubbleOtherColor    | The color for the bubble of type .Other  | UIColor | table.bubbleOtherColor = UIColor(red: 244/255.0, green: 198/255.0, blue: 211/255.0, alpha: 1.0) |
-| displayShadow       | Display shadow (default: false)          | Bool    | table.displayShadow = true                                                                      |
+| bubbleFont          | The font of your bubble text content     | UIFont  | `table.bubbleFont = UIFont(name: "HiraKakuProN-W3", size: 20.0)!`                                 |
+| bubbleFontColor     | The color of the bubble text content     | UIColor | `table.bubbleFontColor = UIColor.whiteColor()`                                                    |
+| avatarNameFont      | The font of the avatar name label        | UIFont  | `table.avatarNameFont = UIFont(name: "HiraKakuProN-W3", size: 15.0)!`                             |
+| avatarNameFontColor | The color of the avatar name label       | UIColor | `table.avatarNameFontColor = UIColor.redColor()`                                                  |
+| avatarMode          | Display the avatar mode (default: false) | Bool    | `table.avatarMode = false`                                                                        |
+| bubbleMineColor     | The color for the bubble of type .Mine   | UIColor | `table.bubbleMineColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)`    |
+| bubbleOtherColor    | The color for the bubble of type .Other  | UIColor | `table.bubbleOtherColor = UIColor(red: 244/255.0, green: 198/255.0, blue: 211/255.0, alpha: 1.0)` |
+| displayShadow       | Display shadow (default: false)          | Bool    | `table.displayShadow = true`                                                                      |
 
 ### Methods
 
