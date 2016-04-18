@@ -20,17 +20,24 @@ self.view.addSubview(bubbleTableSample)
 - [x] Bubble table generated with code, not external ressources
 - [ ] Fully customizable (still ongoing)
 - [ ] Documented (still ongoing)
-- [ ] A set of method for UX (todo)
+- [ ] A set of method for UX (still ongoing)
 
 ## Usage
 
 - **Feed your bubble table with designed data**
 
+**With text content**
 ```swift
-let data = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), stringContent: "Hi there, is this the new FCTBubbleChat?", type: .Mine)
+let data1 = FCTBubbleData(userName: "MyName", userPic: UIImage(named:"MyAvatar"), date: NSDate(), stringContent: "Hello World!", type: .Mine, contentType: .Text)
 ```
 
-> See [more about FCTBubbleData initialization](#)
+**or picture**
+
+```swift
+let data2 = FCTBubbleData(userName: "Someone", userPic: UIImage(named: "Someone_avatar"), date: NSDate(), imageContent: UIImage(named: "sample_picture")!, type: .Other, contentType: .Image)
+```
+
+> See [more about FCTBubbleData initialization](#initialization)
 
 - **Your `FCTBubbleChatTableView` can be customized by several attributes**
 
@@ -57,6 +64,31 @@ bubbleTableSample.scrollToBottom(true)
 
 ## References
 
+### Initialization
+
+* FCTBubbleData
+  * init(userName: String?, userPic: UIImage?, date: NSDate, stringContent: String, type: FCTBubbleDataType, contentType: FCTBubbleContentType)
+
+| Parameter     | Description                                   |
+|---------------|-----------------------------------------------|
+| userName      | Bubble username                               |
+| userPic       | Bubble avatar picture                         |
+| date          | Bubble date                                   |
+| stringContent | Bubble message content                        |
+| type          | Bubble type. Will define the tail orientation |
+| contentType   | Bubble content type. Will lead the content    |
+
+  * init(userName: String?, userPic: UIImage?, date: NSDate, imageContent: UIImage, type: FCTBubbleDataType, contentType: FCTBubbleContentType)
+
+| Parameter    | Description                                   |
+|--------------|-----------------------------------------------|
+| userName     | Bubble username                               |
+| userPic      | Bubble avatar picture                         |
+| date         | Bubble date                                   |
+| imageContent | Bubble picture                                |
+| type         | Bubble type. Will define the tail orientation |
+| contentType  | Bubble content type. Will lead the content    |
+
 ### Attributes
 
 | Name                | Description                              | Type    | Example                                                                                         |
@@ -78,7 +110,7 @@ bubbleTableSample.scrollToBottom(true)
 
 ## Installation
 
-Building...
+Todo...
 
 ## License
 
