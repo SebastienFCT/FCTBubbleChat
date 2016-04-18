@@ -13,9 +13,15 @@ public enum FCTBubbleDataType: Int {
     case Other
 }
 
+public enum FCTBubbleContentType: Int {
+    case Text
+    case Image
+}
+
 public class FCTBubbleData: NSObject {
 
     var type: FCTBubbleDataType = .Mine
+    var contentType: FCTBubbleContentType = .Text
     
     // Bubble infos
     internal var userName: String?
@@ -24,15 +30,29 @@ public class FCTBubbleData: NSObject {
     
     // Bubble content
     internal var stringContent: String?
+    internal var imageContent: UIImage?
     
-    public convenience init(userName: String?, userPic: UIImage?, date: NSDate, stringContent: String, type: FCTBubbleDataType) {
+    public convenience init(userName: String?, userPic: UIImage?, date: NSDate, stringContent: String, type: FCTBubbleDataType, contentType: FCTBubbleContentType) {
         self.init()
         
         self.userName = userName
         self.userPic = userPic
         self.type = type
+        self.contentType = contentType
         self.date = date
         
         self.stringContent = stringContent
+    }
+    
+    public convenience init(userName: String?, userPic: UIImage?, date: NSDate, imageContent: UIImage, type: FCTBubbleDataType, contentType: FCTBubbleContentType) {
+        self.init()
+        
+        self.userName = userName
+        self.userPic = userPic
+        self.type = type
+        self.contentType = contentType
+        self.date = date
+        
+        self.imageContent = imageContent
     }
 }

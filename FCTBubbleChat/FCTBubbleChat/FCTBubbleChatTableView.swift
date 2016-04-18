@@ -46,7 +46,7 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         initValue()
     }
     
-    override init(frame: CGRect, style: UITableViewStyle) {
+    public override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         initValue()
     }
@@ -136,6 +136,8 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         dateFormatter.dateFormat = "yyyy/MM/dd"
         let currentDate = title.date
         
+        let content = UIView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 50))
+        
         let sectionHeader = UILabel(frame: CGRect(x: 0, y: 10, width: bounds.width, height: 30))
         sectionHeader.backgroundColor = UIColor.clearColor()
         sectionHeader.text = "--- \(dateFormatter.stringFromDate(currentDate)) ---"
@@ -143,7 +145,9 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         sectionHeader.textAlignment = .Center
         sectionHeader.font = UIFont(name: "HiraKakuProN-W3", size: 20.0)!
         
-        return sectionHeader
+        content.addSubview(sectionHeader)
+        
+        return content
     }
     
     public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -183,9 +187,16 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         cell?.bubbleFrame.displayShadow = self.displayShadow
         
         cell?.bubbleFrame.bubbleType = data.type
+        cell?.bubbleFrame.contentType = data.contentType
         
-        cell?.bubbleFrame.text = data.stringContent != nil ? data.stringContent! : ""
         cell?.bubbleFrame.username = data.userName != nil ? data.userName! : ""
+        
+        switch data.contentType {
+        case .Text:
+            cell?.bubbleFrame.text = data.stringContent != nil ? data.stringContent! : ""
+        case .Image:
+            cell?.bubbleFrame.imageContent = data.imageContent != nil ? data.imageContent! : UIImage()
+        }
         
         if avatarMode {
             cell?.bubbleFrame.picMode = avatarMode
@@ -202,11 +213,32 @@ public class FCTBubbleChatTableView: UITableView, UITableViewDataSource, UITable
         guard let data = section[indexPath.row] else {
             return 20.0
         }
-    
-        if avatarMode {
-            return 80 + data.stringContent!.heightWithConstrainedWidth(self.frame.width - 135, font: bubbleFont)
-        } else {
-            return 80 + data.stringContent!.heightWithConstrainedWidth(self.frame.width - 105, font: bubbleFont)
+        
+        switch data.contentType {
+        case .Text:
+            if avatarMode {
+                return 80 + data.stringContent!.heightWithConstrainedWidth(self.frame.width - 135, font: bubbleFont)
+            } else {
+                return 80 + data.stringContent!.heightWithConstrainedWidth(self.frame.width - 105, font: bubbleFont)
+            }
+        case .Image:
+            if avatarMode {
+                if data.imageContent?.size.width > self.bounds.width - 135 {
+                    let newHeight = (data.imageContent?.size.height)! / (data.imageContent?.size.width)! * (self.bounds.width - 135)
+                    return newHeight + 80
+                } else {
+                    let newHeight = (data.imageContent?.size.height)! / (self.bounds.width - 135) * (data.imageContent?.size.width)!
+                    return newHeight + 80
+                }
+            } else {
+                if data.imageContent?.size.width > self.bounds.width - 135 {
+                    let newHeight = (data.imageContent?.size.height)! / (data.imageContent?.size.width)! * (self.bounds.width - 135)
+                    return newHeight + 80
+                } else {
+                    let newHeight = (data.imageContent?.size.height)! / (self.bounds.width - 135) * (data.imageContent?.size.width)!
+                    return newHeight + 80
+                }
+            }
         }
     }
     
