@@ -14,7 +14,7 @@ public class FCTBubbleFrame: UIView {
     private var bubbleColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
 
     // * Text
-    internal var text: String = ""
+    internal var text: String?
     internal var textFont: UIFont = UIFont(name: "HiraKakuProN-W3", size: 20.0)!
     internal var textColor: UIColor = UIColor.whiteColor()
     internal var avatarColor: UIColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)
@@ -33,8 +33,6 @@ public class FCTBubbleFrame: UIView {
     internal var username: String = "Unknown"
     internal var bubbleMineColor: UIColor = UIColor(red: 0/255.0, green: 166/255.0, blue: 186/255.0, alpha: 1.0)
     internal var bubbleOtherColor: UIColor = UIColor(red: 244/255.0, green: 198/255.0, blue: 211/255.0, alpha: 1.0)
-    
-    
     
     override public func layoutSubviews() {
         super.layoutSubviews()
