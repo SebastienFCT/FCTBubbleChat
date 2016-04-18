@@ -13,6 +13,7 @@
 		5D02F3131CB811570019B8AB /* FCTBubbleChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */; };
 		5D02F3151CB813660019B8AB /* FCTBubbleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D02F3141CB813660019B8AB /* FCTBubbleData.swift */; };
 		5D6315611CC14FD30050470D /* FCTBubbleFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6315601CC14FD30050470D /* FCTBubbleFrame.swift */; };
+		5DE8944C1CC52A60000CEB63 /* UIImage+FCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE8944B1CC52A60000CEB63 /* UIImage+FCTExtension.swift */; };
 		5DEC06311CC0421E00F6C2C2 /* FCTBubbleChatTableView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DEC06341CC042D800F6C2C2 /* FCTBubbleData.swift in Headers */ = {isa = PBXBuildFile; fileRef = 5D02F3141CB813660019B8AB /* FCTBubbleData.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		5DEC063A1CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC06381CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift */; };
@@ -55,6 +56,7 @@
 		5D02F3121CB811570019B8AB /* FCTBubbleChatTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleChatTableView.swift; sourceTree = "<group>"; };
 		5D02F3141CB813660019B8AB /* FCTBubbleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleData.swift; sourceTree = "<group>"; };
 		5D6315601CC14FD30050470D /* FCTBubbleFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleFrame.swift; sourceTree = "<group>"; };
+		5DE8944B1CC52A60000CEB63 /* UIImage+FCTExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+FCTExtension.swift"; sourceTree = "<group>"; };
 		5DEC06261CC03F7500F6C2C2 /* FCTBubbleChatSample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FCTBubbleChatSample.xcodeproj; path = FCTBubbleChatSample/FCTBubbleChatSample.xcodeproj; sourceTree = "<group>"; };
 		5DEC06381CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTBubbleTableViewCell.swift; sourceTree = "<group>"; };
 		5DEC06391CC06E6C00F6C2C2 /* FCTBubbleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTBubbleTableViewCell.xib; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				5DEC06441CC0A11400F6C2C2 /* String+FCTExtension.swift */,
+				5DE8944B1CC52A60000CEB63 /* UIImage+FCTExtension.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				5D02F3151CB813660019B8AB /* FCTBubbleData.swift in Sources */,
 				5D6315611CC14FD30050470D /* FCTBubbleFrame.swift in Sources */,
 				5DEC06451CC0A11400F6C2C2 /* String+FCTExtension.swift in Sources */,
+				5DE8944C1CC52A60000CEB63 /* UIImage+FCTExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

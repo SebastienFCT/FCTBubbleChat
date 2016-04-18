@@ -14,6 +14,7 @@
 		5DC5BE9C1CC2BA9F00C3FE21 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5BE981CC2BA9F00C3FE21 /* logo@2x.png */; };
 		5DC5BEA31CC2C26800C3FE21 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5BEA11CC2C26800C3FE21 /* background.png */; };
 		5DC5BEA41CC2C26800C3FE21 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5BEA21CC2C26800C3FE21 /* background@2x.png */; };
+		5DE8944A1CC493FD000CEB63 /* sample_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DE894491CC493FD000CEB63 /* sample_picture.png */; };
 		5DEC06041CC03F7500F6C2C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC06031CC03F7500F6C2C2 /* AppDelegate.swift */; };
 		5DEC06061CC03F7500F6C2C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEC06051CC03F7500F6C2C2 /* ViewController.swift */; };
 		5DEC06091CC03F7500F6C2C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DEC06071CC03F7500F6C2C2 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		5DC5BE981CC2BA9F00C3FE21 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		5DC5BEA11CC2C26800C3FE21 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		5DC5BEA21CC2C26800C3FE21 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		5DE894491CC493FD000CEB63 /* sample_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_picture.png; sourceTree = "<group>"; };
 		5DEC06001CC03F7500F6C2C2 /* FCTBubbleChatSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCTBubbleChatSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DEC06031CC03F7500F6C2C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DEC06051CC03F7500F6C2C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		5DC5BE901CC2AE0000C3FE21 /* Sample ressources */ = {
 			isa = PBXGroup;
 			children = (
+				5DE894491CC493FD000CEB63 /* sample_picture.png */,
 				5DC5BEA11CC2C26800C3FE21 /* background.png */,
 				5DC5BEA21CC2C26800C3FE21 /* background@2x.png */,
 				5DC5BE951CC2BA9F00C3FE21 /* FCTBot.png */,
@@ -220,6 +223,7 @@
 				5DEC060E1CC03F7500F6C2C2 /* Assets.xcassets in Resources */,
 				5DC5BE9B1CC2BA9F00C3FE21 /* logo.png in Resources */,
 				5DEC06091CC03F7500F6C2C2 /* Main.storyboard in Resources */,
+				5DE8944A1CC493FD000CEB63 /* sample_picture.png in Resources */,
 				5DC5BEA31CC2C26800C3FE21 /* background.png in Resources */,
 				5DC5BEA41CC2C26800C3FE21 /* background@2x.png in Resources */,
 				5DC5BE991CC2BA9F00C3FE21 /* FCTBot.png in Resources */,

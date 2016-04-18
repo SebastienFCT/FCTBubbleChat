@@ -22,7 +22,7 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
         // FCTBubbleTable Sample
-        bubbleTableSample = FCTBubbleChatTableView(frame: self.bounds)
+        bubbleTableSample = FCTBubbleChatTableView(frame: self.bounds, style: .Grouped)
         bubbleTableSample.bubbleDatasource = self
         
         bubbleTableSample.displayShadow = true
@@ -60,21 +60,25 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
         let date1 = dateFormatter.dateFromString("2016-04-18")
-        let data1 = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), date: date1!, stringContent: "Hi there, is this the new FCTBubbleChat?", type: .Mine)
+        let data1 = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), date: date1!, stringContent: "Hi there, is this the new FCTBubbleChat?", type: .Mine, contentType: .Text)
         
         let date2 = dateFormatter.dateFromString("2016-04-19")
-        let data2 = FCTBubbleData(userName: "FCTChat Bot", userPic: UIImage(named:"FCTBot"), date: date2!, stringContent: "Yep, welcome to the underground fellow", type: .Other)
+        let data2 = FCTBubbleData(userName: "FCTChat Bot", userPic: UIImage(named:"FCTBot"), date: date2!, stringContent: "Yep, welcome to the underground fellow", type: .Other, contentType: .Text)
         
         let date3 = dateFormatter.dateFromString("2016-04-20")
-        let data3 = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), date: date3!, stringContent: "Sounds great! Tell me more about its features", type: .Mine)
+        let data3 = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), date: date3!, stringContent: "Sounds great! Tell me more about its features", type: .Mine, contentType: .Text)
         
         let date4 = dateFormatter.dateFromString("2016-04-21")
-        let data4 = FCTBubbleData(userName: "FCTChat Bot", userPic: UIImage(named:"FCTBot"), date: date4!, stringContent: "I. Bubble frame flexible: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", type: .Other)
+        let data4 = FCTBubbleData(userName: "FCTChat Bot", userPic: UIImage(named:"FCTBot"), date: date4!, stringContent: "I. Bubble frame flexible: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", type: .Other, contentType: .Text)
+        
+        let date5 = dateFormatter.dateFromString("2016-04-22")
+        let data5 = FCTBubbleData(userName: "FCTChat Bot", userPic: UIImage(named: "FCTBot"), date: date5!, imageContent: UIImage(named: "sample_picture")!, type: .Other, contentType: .Image)
         
         dataArray.append(data3)
         dataArray.append(data4)
         dataArray.append(data1)
         dataArray.append(data2)
+        dataArray.append(data5)
     }
     
     override func prefersStatusBarHidden() -> Bool {
