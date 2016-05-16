@@ -59,10 +59,10 @@ class ViewController: UIViewController, FCTBubbleChatTableViewDataSource {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        let date1 = dateFormatter.dateFromString("2016-04-18")
+        let date1 = dateFormatter.dateFromString("2016-04-20")
         let data1 = FCTBubbleData(userName: "Sebfct", userPic: UIImage(named:"sebfct_avatar.jpg"), date: date1!, stringContent: "Hi there, is this the new FCTBubbleChat?", type: .Mine, contentType: .Text)
         
-        let date2 = dateFormatter.dateFromString("2016-04-19")
+        let date2 = dateFormatter.dateFromString("2016-04-20")
         let data2 = FCTBubbleData(userName: "FCTChat Bot", userPic: UIImage(named:"FCTBot"), date: date2!, stringContent: "Yep, welcome to the underground fellow", type: .Other, contentType: .Text)
         
         let date3 = dateFormatter.dateFromString("2016-04-20")
